@@ -22,21 +22,38 @@ font-family: 'Press Start 2P', cursive;
 
 @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
 
+/* Reset the margin and padding of everything so we can get rid of the white border that the browser gives us by default*/
+* {
+  margin: 0;
+  padding: 0;
+}
+
 /* Style the document body */
 body {
     background-color: #B5E1AA;
 }
 
+header {
+  background-color: #377B70;
+  width: 900px;;
+  padding: 2em;
+}
 /* Style the page title */
 #page-title {
     font-family: 'Press Start 2P', cursive;
-    color: #BB535F;
+    color: #B5E1AA;
+    font-size: 4em;
 }
+
+
+
 
 /* Style the speech bubble */
 #speech-bubble {
-    width: 300px;
-    margin: 50px auto;
+    min-width: 800px;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    margin-left: 50px;
     background: #FFDAC1;
     padding: 20px;
     text-align: left;
@@ -44,18 +61,58 @@ body {
     color: black;
     font-family: arial;
     position: relative;
+    font-size: 3em;
+
+    box-shadow: 1px 1px 4px 1px #888;
+    border-radius: 3px 3px 3px 3px;
+
   }
   
-  #speech-bubble::before {
-    content: "";
-    width: 0px;
-    height: 0px;
-    position: absolute;
-    border-left: 10px solid #FFDAC1;
-    border-right: 10px solid transparent;
-    border-top: 10px solid #FFDAC1;
-    border-bottom: 10px solid transparent;
-    left: 19px;
-    bottom: -19px;
-  }
+#speech-bubble::before {
+  content: "";
+  width: 0px;
+  height: 0px;
+  position: absolute;
+  border-left: 10px solid #FFDAC1;
+  border-right: 10px solid transparent;
+  border-top: 10px solid #FFDAC1;
+  border-bottom: 10px solid transparent;
+  left: 600px;
+  bottom: -19px;
+
+  box-shadow: 1px  #888;
+}
+
+/* 
+Style the response buttons
+*/
+.response-button {
+  background-color: #5CA449;
+  border: none;
+  color: white;
+  padding: 30px 62px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 2em;
+  margin-top: 10%;
+   box-shadow: 1px 1px 4px 1px #888;
+    border-radius: 3px 3px 3px 3px;
+}
+
+/*
+Style the user responses div
+*/
+#user-responses-div {
+  margin-left: 290px;
+  width: 100%;
+  margin-top: -190px;
   
+  
+  
+}
+
+#date-bot-div {
+  margin-left: -50px;
+  
+}
