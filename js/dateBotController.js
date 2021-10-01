@@ -51,6 +51,4 @@ const dateBot = {
         this.dateBotImg.setAttribute("src", "assets/DateBot-question-mark.gif"); 
     },
 
-
-
 }
