@@ -20,6 +20,7 @@ const dateBot = {
     Changes the gif of dateBot to the talking gif
     */
     talk: function() {
+        console.log("Initializing the talk method");
         this.dateBotImg.setAttribute("src", "../assets/DateBot-talking.gif"); 
     },
 
