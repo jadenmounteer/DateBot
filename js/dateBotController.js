@@ -24,6 +24,21 @@ const dateBot = {
         this.dateBotImg.setAttribute("src", "../assets/DateBot-talking.gif"); 
     },
 
+    talk2: function() {
+        console.log("Initializing the talk2 method");
+        this.dateBotImg.setAttribute("src", "./assets/DateBot-talking.gif"); 
+    },
+
+    talk3: function() {
+        console.log("Initializing the talk3 method");
+        this.dateBotImg.setAttribute("src", "/assets/DateBot-talking.gif"); 
+    },
+
+    talk4: function() {
+        console.log("Initializing the talk4 method");
+        this.dateBotImg.setAttribute("src", "assets/DateBot-talking.gif"); 
+    },
+
     /*
     Changes the gif of dateBot to the smiling gif
     */
