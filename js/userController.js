@@ -4,7 +4,8 @@ const user = {
     respond: function(event) {
         // Grab the user's response
         let words = event.target.innerHTML;
-        console.log(words);
+        // Make dateBot respond
+        dateBot.processUserResponse(words);
 
         
     }

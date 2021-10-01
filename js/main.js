@@ -15,7 +15,7 @@ let button2 = document.getElementById("response-button-2");
 let button3 = document.getElementById("response-button-3");
 
 function initialize() {
-    //dateBot.smile();
+    dateBot.talk();
 
     // Create an onclick event for the initial buttons for the user's response
     button1.addEventListener("click", user.respond);
