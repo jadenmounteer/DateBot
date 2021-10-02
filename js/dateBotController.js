@@ -21,8 +21,8 @@ const dateBot = {
     */
     talk: function() {
         this.dateBotImg.setAttribute("src", "./assets/DateBot-talking.gif");
-        // Make dateBot smile after 7 seconds
-        setTimeout(function(){ dateBot.smile(); }, 7000);
+        // Make dateBot smile after 4 seconds
+        setTimeout(function(){ dateBot.smile(); }, 4000);
     },
 
     /*
