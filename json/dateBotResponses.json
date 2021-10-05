@@ -1,5 +1,7 @@
 [
-{"userResponse":"Hello DateBot! Let's get started", "dateBotResponse":"Alright! I'm excited to help you find the perfect date!", "animation":"loveIt()"},
-{"userResponse":"Hello DateBot! How are you?", "dateBotResponse":"I am doing swell, considering I was just born a few days ago.", "animation":"talk()"},
-{"userResponse":"What do you do?", "dateBotResponse":"I am DateBot, an artificial intelligence created to aid you in your quest of finding the perfect date activity. Can I ask you some questions to get started?", "animation":"talk()"}
+{"userResponse":"Hello DateBot! Let's get started", "dateBotResponse":"Alright! I'm excited to help you find the perfect date!", "animation":"loveIt()", "animationDuration":10000},
+{"userResponse":"Hello DateBot! How are you?", "dateBotResponse":"I am doing swell, considering I was just born a few days ago.", "animation":"talk()", "animationDuration":4000},
+{"userResponse":"What do you do?",
+     "dateBotResponse":"I am DateBot, an artificial intelligence created to aid you in your quest of finding the perfect date activity. Can I ask you some questions to get started?",
+      "animation":"talk()", "animationDuration":9100}
 ]

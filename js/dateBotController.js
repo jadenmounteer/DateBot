@@ -12,6 +12,9 @@ const dateBot = {
 
     // The DateBot's current gif
     dateBotImg: document.getElementById("datebot-gif"),
+
+    // The DateBot's voice
+    voice: new SpeechSynthesisUtterance(),
     
 
     /***  Methods ***/
@@ -19,10 +22,10 @@ const dateBot = {
     /*
     Changes the gif of dateBot to the talking gif
     */
-    talk: function() {
+    talk: function(animationDuration) {
         this.dateBotImg.setAttribute("src", "./assets/DateBot-talking.gif");
         // Make dateBot smile after 4 seconds
-        setTimeout(function(){ dateBot.smile(); }, 4000);
+        setTimeout(function(){ dateBot.smile(); }, animationDuration);
     },
 
     /*
@@ -35,28 +38,28 @@ const dateBot = {
     /*
     Changes the gif of dateBot to the love it gif
     */
-    loveIt: function() {
+    loveIt: function(animationDuration) {
         this.dateBotImg.setAttribute("src", "./assets/DateBot-heart-animation.gif");
         // Make dateBot smile after 10 seconds
-        setTimeout(function(){ dateBot.smile(); }, 10000);
+        setTimeout(function(){ dateBot.smile(); }, animationDuration);
     },
 
     /*
     Changes the gif of dateBot to the nailed it gif
     */
-    nailedIt: function() {
+    nailedIt: function(animationDuration) {
         this.dateBotImg.setAttribute("src", "./assets/DateBot-nailed-it.gif");
         // Make dateBot smile after 7 seconds
-        setTimeout(function(){ dateBot.smile(); }, 7000);
+        setTimeout(function(){ dateBot.smile(); }, animationDuration);
     },
 
     /*
     Changes the gif of dateBot to the confused it gif
     */
-    confused: function() {
+    confused: function(animationDuration) {
         this.dateBotImg.setAttribute("src", "./assets/DateBot-question-mark.gif");
         // Make dateBot smile after 7 seconds
-        setTimeout(function(){ dateBot.smile(); }, 7000);
+        setTimeout(function(){ dateBot.smile(); }, animationDuration);
     },
 
     /* 
@@ -101,13 +104,18 @@ const dateBot = {
                 let dateBotResponse = responseJsonData[i].dateBotResponse;
                 // grab the animation to play
                 let dateBotAnimation = responseJsonData[i].animation;
+                // grab the animation duration
+                let dateBotAnimationDuration = responseJsonData[i].animationDuration;
                 // Play the animation
-                dateBot.playAnimation(dateBotAnimation);
+                dateBot.playAnimation(dateBotAnimationDuration, dateBotAnimation);
                 // Display dateBot's response to the user
                 dateBot.displayResponse(dateBotResponse);
-                
+                dateBot.voice.text = dateBotResponse; // Sets the words that DateBot will say.
+                window.speechSynthesis.speak(dateBot.voice); // Cause DateBot to speak
+                // Have the user process DateBot's response after the animation plays
+                setTimeout(function(){ user.processDateBotsResponse(responseJsonData[i]); },
+                 responseJsonData[i].animationDuration);
             }
-
         }
     },
 
@@ -115,23 +123,23 @@ const dateBot = {
     /*
     Plays the animation
     */
-    playAnimation: function(animationToPlay) {
+    playAnimation: function(animationDuration, animationToPlay) {
 
         switch(animationToPlay) {
             case "talk()":
-                dateBot.talk();
+                dateBot.talk(animationDuration);
                 break;
             case "confused()":
-                dateBot.confused();
+                dateBot.confused(animationDuration);
                 break;
             case "loveIt()":
-                dateBot.loveIt();
+                dateBot.loveIt(animationDuration);
                 break;
             case "nailedIt()":
-                dateBot.nailedIt();
+                dateBot.nailedIt(animationDuration);
                 break;
             case "smile":
-                dateBot.smile();
+                dateBot.smile(animationDuration);
                 break;
         }
     },

@@ -35,14 +35,19 @@ body {
 
 header {
   background-color: #377B70;
-  width: 900px;;
-  padding: 2em;
+  /*
+  width: 100%;
+  */
+  padding: .5em;
+ 
 }
 /* Style the page title */
 #page-title {
     font-family: 'Press Start 2P', cursive;
     color: #B5E1AA;
+    /*
     font-size: 4em;
+    */
 }
 
 
@@ -50,10 +55,9 @@ header {
 
 /* Style the speech bubble */
 #speech-bubble {
-    min-width: 800px;
+    width: 50%;
+    margin: auto;
     margin-top: 50px;
-    margin-bottom: 50px;
-    margin-left: 50px;
     background: #FFDAC1;
     padding: 20px;
     text-align: left;
@@ -61,7 +65,8 @@ header {
     color: black;
     font-family: arial;
     position: relative;
-    font-size: 3em;
+    font-size: 1.1em;
+    margin-top: 20px;
 
     box-shadow: 1px 1px 4px 1px #888;
     border-radius: 3px 3px 3px 3px;
@@ -77,7 +82,7 @@ header {
   border-right: 10px solid transparent;
   border-top: 10px solid #FFDAC1;
   border-bottom: 10px solid transparent;
-  left: 600px;
+  left: 50%;
   bottom: -19px;
 
   box-shadow: 1px  #888;
@@ -90,31 +95,51 @@ Style the response buttons
   background-color: #5CA449;
   border: none;
   color: white;
-  padding: 30px 62px;
+  padding: 20px 30px;
   text-align: center;
   text-decoration: none;
   display: inline-block;
-  font-size: 2em;
+  font-size: 1.1em;
   margin-top: 10%;
-   box-shadow: 1px 1px 4px 1px #888;
-    border-radius: 3px 3px 3px 3px;
+  box-shadow: 1px 1px 4px 1px #888;
+  border-radius: 3px 3px 3px 3px;
+  /* Default the buttons to invisible */
+  display: none;
 }
 
 /*
 Style the user responses div
 */
 #user-responses-div {
+  /*
   margin-left: 290px;
   width: 100%;
-  margin-top: -190px;
+  */
+  /* Center the buttons */
+  margin: auto;
+  width: 50%;
+  margin-top: -100px;
+  /*
+  margin-left: auto;
+  margin-right: auto;
+  */
+
   
   
   
 }
 
 #date-bot-div {
-  margin-left: -50px;
-  
+  /*
+  margin-left: -20%;
+  */
+  margin: auto;
+  width: 100%;
+  margin-top: 20px;
+}
+
+#datebot-gif {
+  margin-left: -3.5em;
 }
 
 /*** Try using display: inline-block for the button ***/
