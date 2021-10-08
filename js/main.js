@@ -25,9 +25,12 @@ function initialize() {
             
             if (voices[i].name == 'Google UK English Female') {
                 dateBot.voice.voice = voices[i];
+                dateBot.voice.pitch = 1.06;
                 dateBot.voice.lang = "en"; // Change the language to English
                 dateBot.voice.text = "Hello I'm DateBot! I'm here to help you find the perfect activity for your date."; // Sets the words that DateBot will say.
                 window.speechSynthesis.speak(dateBot.voice); // Cause DateBot to speak
+                
+
                 // Initialize the dateBot talking.
                 dateBot.talk(4600);
                 // Make the buttons appear after the talking animation stops.
@@ -71,4 +74,5 @@ function makeButtonsVisible() {
 /*** This code is called when the page starts up ***/ 
 
 // Initialize the page
-initialize();
+//initialize();
+setTimeout(function(){ initialize(); }, 2000);

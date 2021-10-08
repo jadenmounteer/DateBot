@@ -106,12 +106,12 @@ const dateBot = {
                 let dateBotAnimation = responseJsonData[i].animation;
                 // grab the animation duration
                 let dateBotAnimationDuration = responseJsonData[i].animationDuration;
+                dateBot.voice.text = dateBotResponse; // Sets the words that DateBot will say.
+                window.speechSynthesis.speak(dateBot.voice); // Cause DateBot to speak
                 // Play the animation
                 dateBot.playAnimation(dateBotAnimationDuration, dateBotAnimation);
                 // Display dateBot's response to the user
                 dateBot.displayResponse(dateBotResponse);
-                dateBot.voice.text = dateBotResponse; // Sets the words that DateBot will say.
-                window.speechSynthesis.speak(dateBot.voice); // Cause DateBot to speak
                 // Have the user process DateBot's response after the animation plays
                 setTimeout(function(){ user.processDateBotsResponse(responseJsonData[i]); },
                  responseJsonData[i].animationDuration);

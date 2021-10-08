@@ -94,7 +94,7 @@ const user = {
             // Change the text of the button to the new text
             responseButtons[i].innerHTML = listOfNewResponses[i];
             // Make the button visible again
-            responseButtons[i].style.display = "block";
+            responseButtons[i].style.display = "inline";
         }
 
     }

@@ -98,48 +98,36 @@ Style the response buttons
   padding: 20px 30px;
   text-align: center;
   text-decoration: none;
-  display: inline-block;
   font-size: 1.1em;
-  margin-top: 10%;
   box-shadow: 1px 1px 4px 1px #888;
   border-radius: 3px 3px 3px 3px;
   /* Default the buttons to invisible */
   display: none;
+  max-width: 200px;
+  min-width: 200px;
+  /*
+  Center the buttons 
+  */
+ 
+  margin-bottom: 10px;
 }
 
-/*
-Style the user responses div
-*/
-#user-responses-div {
-  /*
-  margin-left: 290px;
-  width: 100%;
-  */
-  /* Center the buttons */
-  margin: auto;
-  width: 50%;
-  margin-top: -100px;
-  /*
-  margin-left: auto;
-  margin-right: auto;
-  */
-
-  
-  
+/* Style the button container */
+#user-responses-div{
+  margin-top: -80px;
+  display: flex;
+  justify-content: space-around;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
   
 }
 
 #date-bot-div {
-  /*
-  margin-left: -20%;
-  */
-  margin: auto;
   width: 100%;
   margin-top: 20px;
 }
 
 #datebot-gif {
-  margin-left: -3.5em;
+ 
 }
-
-/*** Try using display: inline-block for the button ***/
