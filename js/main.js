@@ -40,12 +40,6 @@ function initialize() {
         
        
     }
-    
-    
-    
-
-    
-
 
     // Create an onclick event for the initial buttons for the user's response
     button1.addEventListener("click", user.respond);
@@ -72,7 +66,5 @@ function makeButtonsVisible() {
 
 
 /*** This code is called when the page starts up ***/ 
-
 // Initialize the page
-//initialize();
 setTimeout(function(){ initialize(); }, 2000);

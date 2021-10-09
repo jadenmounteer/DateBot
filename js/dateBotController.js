@@ -1,3 +1,4 @@
+
 /* 
 This file contains the date bot object, properties, and functions
 */
@@ -70,8 +71,9 @@ const dateBot = {
     Change the buttons accordingly. Maybe the json can have something for the buttons as well?
     */
    processUserResponse: function(userResponse) {
-      // Call the method for getting json data from the responses.json file.
-      dateBot.getNewJsonMessage("./json/dateBotResponses.json", userResponse);   
+      // Call the function for getting json data from the responses.json file.
+      //this.getNewJsonMessage("./json/dateBotResponses.json", userResponse);
+      this.getNewJsonMessage("./json/dateBotResponses.json", userResponse);
    },
 
    /*
