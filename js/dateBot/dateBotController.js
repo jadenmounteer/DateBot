@@ -30,7 +30,7 @@ export default class DateBotController {
     /**
      * Initializes dataBot
      */
-    initialize() {
+    initialize(userObject) {
         // Configure DateBot's speech properties
         let voices = [];
         window.speechSynthesis.onvoiceschanged = () => {
@@ -53,6 +53,12 @@ export default class DateBotController {
                     this.voice.lang = "en"; // Change the language to English
                     this.voice.text = "Hello I'm DateBot! I'm here to help you find the perfect activity for your date."; // Sets the words that DateBot will say.
                     window.speechSynthesis.speak(this.voice); // Cause DateBot to speak
+                    // Make the buttons appear after dateBot is finished speaking
+                    this.voice.onend = function(event) {
+                        // Change DateBot back to smiling
+                        document.getElementById("datebot-gif").setAttribute("src", "./assets/DateBot-blinking-straight-face.gif");
+                        userObject.userView.makeButtonsVisible();
+                    };
     
                     // Initialize the dateBot talking.
                     this.dateBotView.talk(4600);
@@ -92,12 +98,16 @@ export default class DateBotController {
                 objectCallingFunction.voice.text = dateBotResponse; // Sets the words that DateBot will say.
                 window.speechSynthesis.speak(objectCallingFunction.voice); // Cause DateBot to speak
                 // Play the animation
-                objectCallingFunction.dateBotView.playAnimation(dateBotAnimationDuration, dateBotAnimation);
+                objectCallingFunction.dateBotView.playAnimation(dateBotAnimation);
                 // Display dateBot's response to the user
                 objectCallingFunction.dateBotView.displayResponse(dateBotResponse);
-                // Have the user process DateBot's response after the animation plays
-                setTimeout(function(){ userObject.processDateBotsResponse(responseJsonData[i], objectCallingFunction); },
-                 responseJsonData[i].animationDuration);
+                // When DateBot finishes talking...
+                objectCallingFunction.voice.onend = function() {
+                    // Change DateBot back to smiling
+                    objectCallingFunction.dateBotView.playAnimation("smile");
+                    // Have the user process DateBot's response
+                    userObject.processDateBotsResponse(responseJsonData[i], objectCallingFunction);
+                };
             }
         }
     }

@@ -18,19 +18,6 @@ let button1 = document.getElementById("response-button-1");
 let button2 = document.getElementById("response-button-2");
 let button3 = document.getElementById("response-button-3");
 
-/* 
-Loops through the user response buttons and makes them visible
-*/
-function makeButtonsVisible() {
-    // Grab all of the response buttons
-    const responseButtons = document.getElementsByClassName('response-button');
-
-    // Loop through the buttons
-    for (let i=0; i<responseButtons.length; i++) {
-        // Make the button visible
-        responseButtons[i].style.display = "block";
-    }
-}
 
 
 /*** This code is called when the page starts up ***/ 
@@ -42,11 +29,7 @@ const dateBot = new DateBot();
 const user = new User();
 
 // Initialize dateBot
-setTimeout(function(){ dateBot.initialize(); }, 2000);
-
-// Make the buttons appear after the talking animation stops.
-setTimeout(function(){ makeButtonsVisible(); }, 6650);
-
+setTimeout(function(){ dateBot.initialize(user); }, 2000);
 
 // Create an onclick event for the initial buttons for the user's response
 button1.addEventListener("click", () => {user.respond(button1 ,user, dateBot)});

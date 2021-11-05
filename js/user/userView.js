@@ -1,6 +1,20 @@
 class UserView {
 
     /* 
+    Loops through the user response buttons and makes them visible
+    */
+    makeButtonsVisible() {
+        // Grab all of the response buttons
+        const responseButtons = document.getElementsByClassName('response-button');
+
+        // Loop through the buttons
+        for (let i=0; i<responseButtons.length; i++) {
+            // Make the button visible
+            responseButtons[i].style.display = "block";
+        }
+    }
+
+    /* 
     Hides all of the buttons
     */
     hideUserResponseButtons() {
@@ -27,8 +41,12 @@ class UserView {
         for (let i=0; i<responseButtons.length; i++) {
             // Change the text of the button to the new text
             responseButtons[i].innerHTML = listOfNewResponses[i];
-            // Make the button visible again
-            responseButtons[i].style.display = "inline";
+            // If the button text is not undefined
+            if (responseButtons[i].innerHTML != 'undefined') {
+                // Make the button visible again
+                responseButtons[i].style.display = "inline";
+            }
+            
         }
 
     }

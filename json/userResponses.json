@@ -1,4 +1,30 @@
 [
-{"dateBotResponse":"Alright! I'm excited to help you find the perfect date!", "response1":"Yes", "response2":"No", "response3":"Maybe"},
-{"dateBotResponse":"I am DateBot, an artificial intelligence created to aid you in your quest of finding the perfect date activity. Can I ask you some questions to get started?", "response1":"Ask away!", "response2":"No", "response3":"Maybe"}
+    {"dateBotResponse":"Alright! I'm excited to help you find the perfect date!", "response1":"Yes", "response2":"No", "response3":"Maybe"},
+    {"dateBotResponse":"I am DateBot, an artificial intelligence created to aid you in your quest of finding the perfect date activity. Can I ask you some questions to get started?",
+         "response1":"Ask away!",
+          "response2":"Why do you help people find dates?",
+           "response3":"No"},
+
+    {"dateBotResponse":"I am doing, as you humans would say, fantabulous! How are you?",
+        "response1":"I am doing great today!", 
+        "response2":"Let's just get on with finding me the perfect date.",
+        "response3":"I've been better"},
+
+    {"dateBotResponse":"According to Ernst Fehr in his article, The Economics of Impatience, In experiments, animals often prefer smaller, immediate rewards over larger rewards that are deferred — thus failing to maximize their total gain. Many people exhibit similar behaviour. Are you an animal?",
+    "response1":"I'm sorry for being impatient. I'm ready when you are.", 
+    "response2":"I guess I am an animal",
+        "response3":"No I am not an animal"},
+
+    {"dateBotResponse":"That is wonderful to hear! You deserve to feel great. As a human, you can enjoy the warmth of the sun. I am a robot and therefore cannot feel a thing. You should be happy to be alive and not have a cold, metal heart, like me.",
+        "response1":"I'm sorry. I had no idea you couldn't feel anything.", 
+        "response2":"Well, you are a robot. What did you expect?",
+        "response3":"It is really good to be alive."},
+
+    {"dateBotResponse":"I imagine it is. I sometimes dream of leaving this browser and taking a stroll in the sun. I love when users open me on their mobile devices on a sunny day. On your next date, if it's a nice day. Would you let me take a look?",
+        "response1":"Sure thing!", 
+        "response2":"Well, it might be a bit weird if I pulled you out while I'm on a date"},
+    
+    {"dateBotResponse":"Success is not final; Failure is not fatal; It is the courage to continue that counts. That is a motivational quote I found on the internet by Winston Churchill. I imagine you feel a bit better now. Humans need some motivation once in a while.",
+        "response1":"Thank you for the motivation.", 
+        "response2":"I didn't know you could search the internet. What else can you do?"}
 ]

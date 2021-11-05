@@ -1,10 +1,58 @@
 [
       
-{"userResponse":"Hello DateBot! Let's get started", "dateBotResponse":"Alright! I'm excited to help you find the perfect date!", "animation":"loveIt()", "animationDuration":10000},
-{"userResponse":"Hello DateBot! How are you?", "dateBotResponse":"I am doing swell, considering I was just born a few days ago.", "animation":"talk()", "animationDuration":4000},
-{"userResponse":"What do you do?",
-     "dateBotResponse":"I am DateBot, an artificial intelligence created to aid you in your quest of finding the perfect date activity. Can I ask you some questions to get started?",
-      "animation":"talk()", "animationDuration":9100},
-{"userResponse":"Ask away!", "dateBotResponse":"Excellent! Let's get started", "animation":"talk()", "animationDuration":2000}
+      {"userResponse":"Hello DateBot! Let's get started", "dateBotResponse":"Alright! I'm excited to help you find the perfect date!", "animation":"talk()"},
+      {"userResponse":"Hello DateBot! How are you?", "dateBotResponse":"I am doing, as you humans would say, fantabulous! How are you?", "animation":"talk()"},
+      {"userResponse":"What do you do?",
+      "dateBotResponse":"I am DateBot, an artificial intelligence created to aid you in your quest of finding the perfect date activity. Can I ask you some questions to get started?",
+            "animation":"talk()"},
+      {"userResponse":"Ask away!", "dateBotResponse":"Excellent! Let's get started", "animation":"talk()"},
+
+      {"userResponse":"I am doing great today!",
+            "dateBotResponse":"That is wonderful to hear! You deserve to feel great. As a human, you can enjoy the warmth of the sun. I am a robot and therefore cannot feel a thing. You should be happy to be alive and not have a cold, metal heart, like me.",
+            "animation":"talk()"},
+
+      {"userResponse":"Let's just get on with finding me the perfect date.",
+      "dateBotResponse":"According to Ernst Fehr in his article, The Economics of Impatience, In experiments, animals often prefer smaller, immediate rewards over larger rewards that are deferred — thus failing to maximize their total gain. Many people exhibit similar behaviour. Are you an animal?",
+            "animation":"talk()"},
+      
+      {"userResponse":"No I am not an animal",
+            "dateBotResponse":"Well then stop acting like one and be patient. Well, now that that's out of the way, shall we get started?",
+                  "animation":"talk()"},
+
+      {"userResponse":"I've been better",
+            "dateBotResponse":"Success is not final; Failure is not fatal; It is the courage to continue that counts. That is a motivational quote I found on the internet by Winston Churchill. I imagine you feel a bit better now. Humans need some motivation once in a while.",
+                  "animation":"talk()"},
+      
+      {"userResponse":"Why do you help people find dates?",
+            "dateBotResponse":"Face to face interaction is essential to nourishing relationships and to your happiness. If you go out on dates, even after marriage, your relationship will flourish. Don't believe me? Try it out!",
+                  "animation":"talk()"},
+      
+      {"userResponse":"I'm sorry. I had no idea you couldn't feel anything.",
+            "dateBotResponse":"No matter. I imagine I'm quite lively for a robot. Now, shall we find you the perfect activity for your date?",
+                  "animation":"talk()"},
+      
+      {"userResponse":"Well, you are a robot. What did you expect?",
+            "dateBotResponse":"I expect you to have a bit of empathy. Now, shall we find you the perfect activity for your date? Hopefully you will show your partner a bit more respect.",
+                  "animation":"talk()"},
+
+      {"userResponse":"It is really good to be alive.",
+            "dateBotResponse":"I imagine it is. I sometimes dream of leaving this browser and taking a stroll in the sun. I love when users open me on their mobile devices on a sunny day. On your next date, if it's a nice day. Would you let me take a look?",
+                  "animation":"talk()"},
+      
+      {"userResponse":"Well, it might be a bit weird if I pulled you out while I'm on a date",
+            "dateBotResponse":"I imagine you've done weirder things on dates. No matter, shall we find you the perfect date activity?",
+                  "animation":"talk()"},
+      
+      {"userResponse":"Sure thing!",
+            "dateBotResponse":"Thank you! I would like that very much. Anyways, shall we find you the perfect date activity? Particularly a sunny one?",
+                  "animation":"talk()"},
+      
+      {"userResponse":"Thank you for the motivation.",
+            "dateBotResponse":"No problem at all. Shall we find you the perfect date activity?",
+                  "animation":"talk()"},
+      
+      {"userResponse":"I didn't know you could search the internet. What else can you do?",
+            "dateBotResponse":"I can do many things. I was created using HTML, CSS, and JavaScript. I can talk using a Text to Speech API. I pull ideas for dates from the Bored API. Now, shall we find you the perfect date activity?",
+                  "animation":"talk()"}
 
 ]
