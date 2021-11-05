@@ -31,6 +31,7 @@ const user = new User();
 // Initialize dateBot
 window.addEventListener("click", () => {
     console.log("Setting timeout");
+    alert("Setting timeout");
     setTimeout(function(){ dateBot.initialize(user); }, 1000);
 });
 //setTimeout(function(){ dateBot.initialize(user); }, 1000);
