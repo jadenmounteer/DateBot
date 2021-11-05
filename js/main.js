@@ -34,6 +34,12 @@ window.addEventListener("click", () => {
     alert("Setting timeout");
     setTimeout(function(){ dateBot.initialize(user); }, 1000);
 });
+
+window.addEventListener("touchend", () => {
+    console.log("Setting timeout");
+    alert("Setting timeout");
+    setTimeout(function(){ dateBot.initialize(user); }, 1000);
+});
 //setTimeout(function(){ dateBot.initialize(user); }, 1000);
 
 // Create an onclick event for the initial buttons for the user's response
