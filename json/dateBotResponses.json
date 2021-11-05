@@ -1,11 +1,20 @@
 [
       
-      {"userResponse":"Hello DateBot! Let's get started", "dateBotResponse":"Alright! I'm excited to help you find the perfect date!", "animation":"talk()"},
-      {"userResponse":"Hello DateBot! How are you?", "dateBotResponse":"I am doing, as you humans would say, fantabulous! How are you?", "animation":"talk()"},
+      {"userResponse":"Hello DateBot! Let's get started",
+             "dateBotResponse":"Alright! I'm excited to help you find the perfect date!",
+              "animation":"talk()"},
+
+      {"userResponse":"Hello DateBot! How are you?",
+             "dateBotResponse":"I am doing, as you humans would say, fantabulous! How are you?",
+              "animation":"talk()"},
+
       {"userResponse":"What do you do?",
       "dateBotResponse":"I am DateBot, an artificial intelligence created to aid you in your quest of finding the perfect date activity. Can I ask you some questions to get started?",
             "animation":"talk()"},
-      {"userResponse":"Ask away!", "dateBotResponse":"Excellent! Let's get started", "animation":"talk()"},
+
+      {"userResponse":"Ask away!",
+             "dateBotResponse":"Excellent! Let's get started",
+              "animation":"talk()"},
 
       {"userResponse":"I am doing great today!",
             "dateBotResponse":"That is wonderful to hear! You deserve to feel great. As a human, you can enjoy the warmth of the sun. I am a robot and therefore cannot feel a thing. You should be happy to be alive and not have a cold, metal heart, like me.",
@@ -53,6 +62,14 @@
       
       {"userResponse":"I didn't know you could search the internet. What else can you do?",
             "dateBotResponse":"I can do many things. I was created using HTML, CSS, and JavaScript. I can talk using a Text to Speech API. I pull ideas for dates from the Bored API. Now, shall we find you the perfect date activity?",
+                  "animation":"talk()"},
+
+      {"userResponse":"I'm sorry for being impatient. I'm ready when you are.",
+            "dateBotResponse":"No problem. Humans can often be unstable. It's in your programming. Let's get to it then!",
+                  "animation":"talk()"},
+
+      {"userResponse":"I guess I am an animal",
+            "dateBotResponse":"Admitting you have a problem is the first step to recovery. Anyways, shall we find you the perfect date activity?",
                   "animation":"talk()"}
 
 ]

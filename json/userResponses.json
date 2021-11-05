@@ -1,5 +1,8 @@
 [
-    {"dateBotResponse":"Alright! I'm excited to help you find the perfect date!", "response1":"Yes", "response2":"No", "response3":"Maybe"},
+    {"dateBotResponse":"Alright! I'm excited to help you find the perfect date!",
+         "response1":"Yes", "response2":"No",
+          "response3":"Maybe"},
+          
     {"dateBotResponse":"I am DateBot, an artificial intelligence created to aid you in your quest of finding the perfect date activity. Can I ask you some questions to get started?",
          "response1":"Ask away!",
           "response2":"Why do you help people find dates?",

@@ -29,7 +29,11 @@ const dateBot = new DateBot();
 const user = new User();
 
 // Initialize dateBot
-setTimeout(function(){ dateBot.initialize(user); }, 2000);
+window.addEventListener("click", () => {
+    console.log("Setting timeout");
+    setTimeout(function(){ dateBot.initialize(user); }, 1000);
+});
+//setTimeout(function(){ dateBot.initialize(user); }, 1000);
 
 // Create an onclick event for the initial buttons for the user's response
 button1.addEventListener("click", () => {user.respond(button1 ,user, dateBot)});
