@@ -48,6 +48,7 @@ export default class DateBotController {
                 // Google UK English Female
                 //Google português do Brasil
                 if (voices[i].name == 'Google UK English Female') {
+                    
                     this.voice.voice = voices[i];
                     this.voice.pitch = 1.06; // Change the pitch 1.06
                     this.voice.lang = "en"; // Change the language to English

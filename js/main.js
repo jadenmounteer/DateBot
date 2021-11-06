@@ -28,18 +28,8 @@ const dateBot = new DateBot();
 // Create an instance of the user 
 const user = new User();
 
-// Voice testing
-let testVoice = new SpeechSynthesisUtterance("Hello world");
-
-speechSynthesis.speak(testVoice);
-
-document.getElementById("test-button").addEventListener("click", () => {
-    alert("You clicked me");
-    speechSynthesis.speak(testVoice);
-});
-
 // Initialize dateBot
-//setTimeout(function(){ dateBot.initialize(user); }, 1000);
+setTimeout(function(){ dateBot.initialize(user); }, 1000);
 
 // Create an onclick event for the initial buttons for the user's response
 button1.addEventListener("click", () => {user.respond(button1 ,user, dateBot)});
