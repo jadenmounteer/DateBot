@@ -21,8 +21,15 @@ const dateBot = new DateBot();
 // Create an instance of the user 
 const user = new User();
 
+let buttonEvent;
+if(/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)){
+    buttonEvent = "touchend";
+}
+else {
+    buttonEvent = "click"
+}
 // Add an event listener to the get started button
-document.getElementById("get-started-button").addEventListener("click", () => {
+document.getElementById("get-started-button").addEventListener(buttonEvent, () => {
 
     // Insert the necessary html
 
