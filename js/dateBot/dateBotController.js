@@ -6,6 +6,7 @@ This file contains the date bot object, properties, and functions
 import DateBotModel from "./dateBotModel.js";
 import DateBotView from "./dateBotView.js";
 import getNewJsonMessage from "../utilities/ajaxHelper.js";
+import  {initializeVoice, setVoiceMessage} from '../utilities/speechSynthHelper.js';
 
 
 
@@ -31,41 +32,8 @@ export default class DateBotController {
      * Initializes dataBot
      */
     initialize(userObject) {
-        // Configure DateBot's speech properties
-        let voices = [];
-        window.speechSynthesis.onvoiceschanged = () => {
-            // Get List of Voices
-            voices = window.speechSynthesis.getVoices();
-
-            /** This will log all of the available voices **/
-            /*
-            for (let i=0; i<voices.length; i++) {
-                console.log(voices[i]);
-            }
-            */
-    
-            for (let i=0; i<voices.length; i++) {
-                // Google UK English Female
-                //Google português do Brasil
-                if (voices[i].name == 'Google UK English Female') {
-                    
-                    this.voice.voice = voices[i];
-                    this.voice.pitch = 1.06; // Change the pitch 1.06
-                    this.voice.lang = "en"; // Change the language to English
-                    this.voice.text = "Hello I'm DateBot! I'm here to help you find the perfect activity for your date."; // Sets the words that DateBot will say.
-                    window.speechSynthesis.speak(this.voice); // Cause DateBot to speak
-                    // Make the buttons appear after dateBot is finished speaking
-                    this.voice.onend = function(event) {
-                        // Change DateBot back to smiling
-                        document.getElementById("datebot-gif").setAttribute("src", "./assets/DateBot-blinking-straight-face.gif");
-                        userObject.userView.makeButtonsVisible();
-                    };
-    
-                    // Initialize the dateBot talking.
-                    this.dateBotView.talk(4600);
-                }
-            }  
-        }
+        // Initialize DateBot's voice
+        initializeVoice(this.voice, userObject, this.dateBotView);
     
     }
 

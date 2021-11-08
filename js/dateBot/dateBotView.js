@@ -15,7 +15,7 @@ class DateBotView {
     Changes the gif of dateBot to the talking gif
     */
     talk() {
-        this.dateBotImg.setAttribute("src", "./assets/DateBot-talking.gif");
+        document.getElementById("datebot-gif").setAttribute("src", "./assets/DateBot-talking.gif");
     }
 
 
@@ -44,8 +44,8 @@ class DateBotView {
     Changes the gif of dateBot to the smiling gif
     */
     smile() {
-        console.log("smiling");
-        dateBotImg.setAttribute("src", "./assets/DateBot-blinking-straight-face.gif"); 
+        
+        document.getElementById("datebot-gif").setAttribute("src", "./assets/DateBot-blinking-straight-face.gif"); 
     }
     
     /*

@@ -20,8 +20,22 @@ export default class User {
     Triggered when the user clicks a button.
     */
     respond(buttonBeingClicked, userObject, dateBotObject) {
+        // Find the button being clicked
+        let buttonClicked;
+        switch(buttonBeingClicked) {
+            case 1:
+                buttonClicked = document.getElementById("response-button-1");
+                break;
+            case 2:
+                buttonClicked = document.getElementById("response-button-2");
+                break;
+            case 3:
+                buttonClicked = document.getElementById("response-button-3");
+                break;
+        }
+
         // Grab the user's response
-        const words = buttonBeingClicked.innerHTML;
+        const words = buttonClicked.innerHTML;
         // Hide the old buttons so the user cannot see them and click them again.
         userObject.userView.hideUserResponseButtons();
         // Make dateBot respond
