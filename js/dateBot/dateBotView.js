@@ -78,6 +78,38 @@ class DateBotView {
     displayResponse(dateBotResponse) {
         document.getElementById("speech-bubble").innerHTML = dateBotResponse;
     }
+
+    /** Displays the question to the user */
+    displayQuestion(questionToAsk){
+        console.log("Displaying question");
+    }
+
+    /**
+     * Displays the perfect date to the user
+     */
+     displayPerfectDate(perfectDate){
+         console.log(`Displaying ${perfectDate}`);
+    }
+
+    /** Say something witty */
+    saySomethingWitty(callback, wittyComment, dateBotObject){
+        // Sets the words that DateBot will say.
+        dateBotObject.voice.text = wittyComment; // TODO: This is where she can say something random 
+        window.speechSynthesis.speak(dateBotObject.voice); // Cause DateBot to speak
+        // Play the talk animation
+        dateBotObject.dateBotView.playAnimation("talk()");
+        // Display dateBot's response to the user
+        dateBotObject.dateBotView.displayResponse(wittyComment);
+        // When DateBot finishes talking...
+        dateBotObject.voice.onend = function() {
+            // Change DateBot back to smiling
+            dateBotObject.dateBotView.playAnimation("smile");
+            // The callback is played after DateBot finishes talking
+            callback();
+        };
+
+    }
+
 }
 
 export default DateBotView;

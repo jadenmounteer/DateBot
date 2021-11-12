@@ -60,6 +60,8 @@ export default class DateBotController {
             if (userResponse == responseJsonData[i].userResponse) {
                 // grab datebot's response
                 let dateBotResponse = responseJsonData[i].dateBotResponse;
+                // Make DateBot remember the user's response
+                objectCallingFunction.model.rememberResponse(userResponse);
                 // grab the animation to play
                 let dateBotAnimation = responseJsonData[i].animation;
                 // grab the animation duration
@@ -74,11 +76,50 @@ export default class DateBotController {
                 objectCallingFunction.voice.onend = function() {
                     // Change DateBot back to smiling
                     objectCallingFunction.dateBotView.playAnimation("smile");
-                    // Have the user process DateBot's response
-                    userObject.processDateBotsResponse(responseJsonData[i], objectCallingFunction);
+                    // Check if it is time to find a date
+                    if (objectCallingFunction.model.timeToFindADate) {
+                        // Find the user the perfect date!
+                        objectCallingFunction.findPerfectDate(objectCallingFunction);
+                    }
+                    else {
+                        // Have the user process DateBot's response
+                        userObject.processDateBotsResponse(responseJsonData[i], objectCallingFunction);
+                    }
+                    
                 };
             }
         }
     }
+
+    /**
+     * DateBot asks the user a question.
+     * @param {} questionToAsk 
+     */
+     askQuestion(questionToAsk){
+         // Call the necessary function from the view to render the question to the screen
+         this.dateBotView.displayQuestion(questionToAsk);
+    }
+
+    /**
+     * Here, datebot finds the perfect date for the user
+     */
+    findPerfectDate(dateBotObject){
+
+        // Create the intermediate function to play while DateBot is processing the user's request.
+        function saySomethingWhileProcessingRequest(callback) {
+            console.log("Inside intermediate function");
+            // Grab a witty comment
+            dateBotObject.model.comeUpWithSomethingWittyToSay(dateBotObject, callback);
+            // Have DateBot say the witty comment
+            //dateBotObject.dateBotView.saySomethingWitty(callback, wittyComment, dateBotObject);
+            
+        }
+
+        // Get the perfect date from the model
+        dateBotObject.model.getPerfectDate(dateBotObject.dateBotView.displayPerfectDate, saySomethingWhileProcessingRequest);
+    }
+
+    
+
 
 }

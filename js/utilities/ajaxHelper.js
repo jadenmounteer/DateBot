@@ -16,4 +16,18 @@ function getNewJsonMessage(jsonFile, responseFromEntity, callBack, objectCalling
     xhttp.send();
 }
 
-export default {getNewJsonMessage}
+
+function getNewJsonList(jsonFile) {
+    const xhttp = new XMLHttpRequest();
+
+    xhttp.onload = function() {
+    // Parse the response to turn it into a JavaScript object
+    // Return it
+    return this.responseText;
+    };
+
+    xhttp.open("GET", jsonFile);
+    xhttp.send();
+}
+
+export default {getNewJsonMessage, getNewJsonList}

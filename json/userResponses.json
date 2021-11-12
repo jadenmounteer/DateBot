@@ -1,7 +1,26 @@
 [
-    {"dateBotResponse":"Alright! I'm excited to help you find the perfect date!",
-         "response1":"Yes", "response2":"No",
-          "response3":"Maybe"},
+    {"dateBotResponse":"Alright! I'm excited to help you find the perfect date! First question: what is your budget?",
+        "response1":"I want a free date", 
+        "response2":"$5 max",
+        "response3":"$10 max",
+        "response4":"$20 max",
+        "response5":"$30 max",
+        "response6":"$50 or more"},
+
+    {"dateBotResponse":"Excellent! Second question: what is the current season?",
+        "response1":"Spring", 
+        "response2":"Summer",
+        "response3":"Fall",
+        "response4":"Winter",
+        "response5":"I prefer a date I can do in any season"},
+    
+    {"dateBotResponse":"Thank you. Third question: About what time would you like to begin your date?",
+        "response1":"Early morning", 
+        "response2":"Morning",
+        "response3":"Afternoon",
+        "response4":"Evening",
+        "response5":"Night",
+        "response6":"Any time"},
           
     {"dateBotResponse":"I am DateBot, an artificial intelligence created to aid you in your quest of finding the perfect date activity. Can I ask you some questions to get started?",
          "response1":"Ask away!",
@@ -29,5 +48,13 @@
     
     {"dateBotResponse":"Success is not final; Failure is not fatal; It is the courage to continue that counts. That is a motivational quote I found on the internet by Winston Churchill. I imagine you feel a bit better now. Humans need some motivation once in a while.",
         "response1":"Thank you for the motivation.", 
-        "response2":"I didn't know you could search the internet. What else can you do?"}
+        "response2":"I didn't know you could search the internet. What else can you do?"},
+    
+    {"dateBotResponse":"I am sorry. That feature is not available yet. Can I help you with something else?",
+        "response1":"Hello DateBot! Let's get started", 
+        "response2":"Hello DateBot! How are you?",
+        "response3":"What do you do?", 
+        "response4":"Can you give me some advice for dating?", 
+        "response5":"Can I view my list of favorite dates?", 
+        "response6":"Option not available"}
 ]

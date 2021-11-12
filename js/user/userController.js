@@ -32,6 +32,15 @@ export default class User {
             case 3:
                 buttonClicked = document.getElementById("response-button-3");
                 break;
+            case 4:
+                buttonClicked = document.getElementById("response-button-4");
+                break;
+            case 5:
+                buttonClicked = document.getElementById("response-button-5");
+                break;
+            case 6:
+                buttonClicked = document.getElementById("response-button-6");
+                break;
         }
 
         // Grab the user's response
@@ -71,8 +80,12 @@ export default class User {
                 let userResponse1 = userResponses[i].response1;
                 let userResponse2 = userResponses[i].response2;
                 let userResponse3 = userResponses[i].response3;
+                let userResponse4 = userResponses[i].response4;
+                let userResponse5 = userResponses[i].response5;
+                let userResponse6 = userResponses[i].response6;
+                let userResponse7 = userResponses[i].response7;
                 // Call the addNewResponseButtons method
-                userObject.userView.addNewResponseButtons(userResponse1, userResponse2, userResponse3);
+                userObject.userView.addNewResponseButtons(userResponse1, userResponse2, userResponse3, userResponse4, userResponse5, userResponse6, userResponse7);
             }
         }
     }

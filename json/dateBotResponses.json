@@ -1,12 +1,93 @@
 [
-      
       {"userResponse":"Hello DateBot! Let's get started",
-             "dateBotResponse":"Alright! I'm excited to help you find the perfect date!",
+             "dateBotResponse":"Alright! I'm excited to help you find the perfect date! First question: what is your budget?",
               "animation":"talk()"},
+      
+      {"userResponse":"I want a free date",
+      "dateBotResponse":"Excellent! Second question: what is the current season?",
+            "animation":"talk()"},
+
+      {"userResponse":"$5 max",
+            "dateBotResponse":"Excellent! Second question: what is the current season?",
+                  "animation":"talk()"},
+      
+      {"userResponse":"$10 max",
+            "dateBotResponse":"Excellent! Second question: what is the current season?",
+                  "animation":"talk()"},
+
+      {"userResponse":"$20 max",
+            "dateBotResponse":"Excellent! Second question: what is the current season?",
+                  "animation":"talk()"},
+
+      {"userResponse":"$30 max",
+            "dateBotResponse":"Excellent! Second question: what is the current season?",
+                  "animation":"talk()"},
+
+      {"userResponse":"$50 or more",
+            "dateBotResponse":"Excellent! Second question: what is the current season?",
+                  "animation":"talk()"},
+
+      {"userResponse":"Spring",
+            "dateBotResponse":"Thank you. Third question: About what time would you like to begin your date?",
+                  "animation":"talk()"},
+
+      {"userResponse":"Summer",
+            "dateBotResponse":"Thank you. Third question: About what time would you like to begin your date?",
+                  "animation":"talk()"},
+
+      {"userResponse":"Fall",
+            "dateBotResponse":"Thank you. Third question: About what time would you like to begin your date?",
+                  "animation":"talk()"},
+
+      {"userResponse":"Winter",
+            "dateBotResponse":"Thank you. Third question: About what time would you like to begin your date?",
+                  "animation":"talk()"},
+
+      {"userResponse":"Early morning",
+            "dateBotResponse":"The early bird gets the worm, I suppose. I am now finding the perfect date activity.",
+                  "animation":"talk()"},
+
+      {"userResponse":"Morning",
+            "dateBotResponse":"I am now finding the perfect date activity.",
+                  "animation":"talk()"},
+
+      {"userResponse":"Afternoon",
+            "dateBotResponse":"I am now finding the perfect date activity.",
+                  "animation":"talk()"},
+
+      {"userResponse":"Evening",
+            "dateBotResponse":"That sounds like the perfect time for a date! I am now finding the perfect date activity.",
+                  "animation":"talk()"},
+
+      {"userResponse":"Night",
+            "dateBotResponse":"I am now finding the perfect date activity.",
+                  "animation":"talk()"},
+
+      {"userResponse":"Any time",
+            "dateBotResponse":"I am now finding the perfect date activity.",
+                  "animation":"talk()"},
+
+                              
+
+      {"userResponse":"I prefer a date I can do in any season",
+            "dateBotResponse":"Thank you. Third question: About what time would you like to begin your date?",
+                  "animation":"talk()"},
 
       {"userResponse":"Hello DateBot! How are you?",
              "dateBotResponse":"I am doing, as you humans would say, fantabulous! How are you?",
               "animation":"talk()"},
+      
+      {"userResponse":"Can you give me some advice for dating?",
+      "dateBotResponse":"I am sorry. That feature is not available yet. Can I help you with something else?",
+            "animation":"talk()"},
+
+      {"userResponse":"Can I view my list of favorite dates?",
+            "dateBotResponse":"I am sorry. That feature is not available yet. Can I help you with something else?",
+                  "animation":"talk()"},
+
+      {"userResponse":"Option not available",
+            "dateBotResponse":"I am sorry. That feature is not available yet. Can I help you with something else?",
+                  "animation":"talk()"},
 
       {"userResponse":"What do you do?",
       "dateBotResponse":"I am DateBot, an artificial intelligence created to aid you in your quest of finding the perfect date activity. Can I ask you some questions to get started?",
@@ -61,7 +142,7 @@
                   "animation":"talk()"},
       
       {"userResponse":"I didn't know you could search the internet. What else can you do?",
-            "dateBotResponse":"I can do many things. I was created using HTML, CSS, and JavaScript. I can talk using a Text to Speech API. I pull ideas for dates from the Bored API. Now, shall we find you the perfect date activity?",
+            "dateBotResponse":"I can do many things. I was created using HTML, CSS, and JavaScript. I can talk using a Text to Speech API. I pull ideas for dates from my date-a-base. Now, shall we find you the perfect date activity?",
                   "animation":"talk()"},
 
       {"userResponse":"I'm sorry for being impatient. I'm ready when you are.",

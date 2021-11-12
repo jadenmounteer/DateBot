@@ -47,7 +47,9 @@ document.getElementById("get-started-button").addEventListener(buttonEvent, () =
           <button class="response-button" id="response-button-1">Hello DateBot! Let's get started</button>
           <button class="response-button" id="response-button-2">Hello DateBot! How are you?</button>
           <button class="response-button" id="response-button-3">What do you do?</button>
-          
+          <button class="response-button" id="response-button-4">Can you give me some advice for dating?</button>
+          <button class="response-button" id="response-button-5">Can I view my list of favorite dates?</button>
+          <button class="response-button" id="response-button-6">Option not available</button>
         </div>
 
     
@@ -60,6 +62,9 @@ document.getElementById("get-started-button").addEventListener(buttonEvent, () =
     document.getElementById("response-button-1").addEventListener("click", () => {user.respond(1, user, dateBot)});
     document.getElementById("response-button-2").addEventListener("click", () => {user.respond(2, user, dateBot)});
     document.getElementById("response-button-3").addEventListener("click", () => {user.respond(3, user, dateBot)});
+    document.getElementById("response-button-4").addEventListener("click", () => {user.respond(4, user, dateBot)});
+    document.getElementById("response-button-5").addEventListener("click", () => {user.respond(5, user, dateBot)});
+    document.getElementById("response-button-6").addEventListener("click", () => {user.respond(6, user, dateBot)});
 
 });
 

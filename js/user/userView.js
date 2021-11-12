@@ -30,12 +30,12 @@ class UserView {
     /* 
     Adds new response buttons to the screen.
     */
-    addNewResponseButtons(response1, response2, response3) {
+    addNewResponseButtons(response1, response2, response3, response4, response5, response6, response7) {
         // Grab all of the response buttons
         const responseButtons = document.getElementsByClassName('response-button');
 
         // Make a list of the responses
-        const listOfNewResponses = [response1, response2, response3];
+        const listOfNewResponses = [response1, response2, response3, response4, response5, response6, response7];
 
         // Loop through the buttons
         for (let i=0; i<responseButtons.length; i++) {
