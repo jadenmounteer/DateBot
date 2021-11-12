@@ -34,7 +34,7 @@ document.getElementById("get-started-button").addEventListener(buttonEvent, () =
     // Insert the necessary html
 
     document.getElementsByTagName("main")[0].innerHTML = `
-    <div id="speech-bubble">Hello I'm DateBot! I'm here to help you find the perfect activity for your date.</div>          
+    <div id="speech-bubble">Hello I am DateBot! I'm here to help you find the perfect activity for your date.</div>          
 
     <!-- The datebot -->
 

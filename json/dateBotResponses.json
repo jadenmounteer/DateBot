@@ -48,23 +48,23 @@
                   "animation":"talk()"},
 
       {"userResponse":"Morning",
-            "dateBotResponse":"I am now finding the perfect date activity.",
+            "dateBotResponse":"The early bird gets the worm, I suppose.",
                   "animation":"talk()"},
 
       {"userResponse":"Afternoon",
-            "dateBotResponse":"I am now finding the perfect date activity.",
+            "dateBotResponse":"Excellent!",
                   "animation":"talk()"},
 
       {"userResponse":"Evening",
-            "dateBotResponse":"That sounds like the perfect time for a date! I am now finding the perfect date activity.",
+            "dateBotResponse":"That sounds like the perfect time for a date!",
                   "animation":"talk()"},
 
       {"userResponse":"Night",
-            "dateBotResponse":"I am now finding the perfect date activity.",
+            "dateBotResponse":"Excellent! Don't stay out too late!",
                   "animation":"talk()"},
 
       {"userResponse":"Any time",
-            "dateBotResponse":"I am now finding the perfect date activity.",
+            "dateBotResponse":"Fantastic!",
                   "animation":"talk()"},
 
                               
