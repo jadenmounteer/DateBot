@@ -20,7 +20,7 @@ export default class DateBotModel {
         switch(userResponse) {
             // Budget answers
             case "I want a free date":
-                userPreferences.budget = "Free";
+                userPreferences.budget = 0;
                 break;
             case "$5 max":
                 userPreferences.budget = 5;
@@ -90,23 +90,26 @@ export default class DateBotModel {
         console.log("Filtering for perfect dates!");
         // Create a separate list to house the list of perfect dates
         let listOfPerfectDates = new Array();
+        console.log(`The user's time preference is ${userPreferences.time}`);
+        console.log(`The user's season preference is ${userPreferences.season}`);
+
 
         // Loop through the listOfAllDates
         listOfAllDates.forEach(date => {
             // Check if the season matches the user's preference or any season
-            if (date.season == userPreferences.season || date.season == "Any season") {
+            if (date.season == userPreferences.season || date.season == "Any season" || date.season.includes(userPreferences.season)) {
                 console.log("Date matches season");
                 // If it does, check if the user's budget is greater than 
                 // or equal to the minimum price of the date
                 if (userPreferences.budget >= date.minPrice) {
                     // If it is, check if the time of day is equal to the
                     // user's preference or if the time is Any time
-                    console.log("Date matches price");
-
-                    if (date.timeOfDay == userPreferences.time || date.timeOfDay == "Any time"){
+                    // or if the date;s time of day includes the user's preference
+                    if (date.timeOfDay == userPreferences.time || date.timeOfDay == "Any time" || date.timeOfDay.includes(userPreferences.time)){
                         // If it is, then it meets all of the criteria to be a perfect date.
                         // Add it to the list of perfect dates
                         console.log("Date matches time of day");
+                        console.log(`pushing date: ${date.activiy}`);
                         listOfPerfectDates.push(date);
                     }
 
@@ -139,7 +142,9 @@ export default class DateBotModel {
                 // If it is successful, resolve the promise with the response
                 if (this.status == 200) {
                     console.log(this.responseText);
-                    resolve(JSON.parse(this.responseText));
+                    // Filter the returned list of date objects for the perfect date
+                    let listOfPerfectDates = dateBotObject.model.filterForPerfectDates(JSON.parse(this.responseText));
+                    resolve(listOfPerfectDates);
                 }
                 // If it is not successful. Reject it with the error
                 else {
@@ -158,14 +163,9 @@ export default class DateBotModel {
             getDates.then(
                 // If it was successful...
                 function(value){
-                    console.log(`Length of list returned: ${value.length}`);
-                    console.log(`Request returned: ${value[0].activity}`);
-                    // Filter the returned list of date objects for the perfect date
-                    let listOfPerfectDates = dateBotObject.model.filterForPerfectDates(value);
-                    console.log(`There is ${listOfPerfectDates.length} date in the list of perfect dates`);
                     // Calls the callback function with the perfect date as a parameter
                     // The callback function is the view's displayPerfectDate() method
-                    callBack(dateBotObject, listOfPerfectDates, 0, userObject);
+                    callBack(dateBotObject, value, 0, userObject);
                 },
                 function(error){console.log(`Error! ${error}`);}
             )

@@ -89,10 +89,19 @@ class DateBotView {
      * Takes the perfect date object as a parameter
      */
      displayPerfectDate(dateBotObject, listOfPerfectDates, indexOfDateToDisplay, userObject){
-         // Grab the index of the next date to display
-         let indexOfNextDate = indexOfDateToDisplay + 1;
+         // If the index of the date to display is greater than the length of the list of perfect dates...
+         // this means that dateBot has read all of the available dates
+         if (indexOfDateToDisplay >= listOfPerfectDates.length) {
+             // Set the index of the date to display back to 0
+             indexOfDateToDisplay = 0;
+         }
+
          // Set the date to display 
          let dateToDisplay = listOfPerfectDates[indexOfDateToDisplay];
+
+         // Grab the index of the next date to display
+         let indexOfNextDate = indexOfDateToDisplay + 1;
+         console.log(`index of next date: ${indexOfNextDate}`);
          // grab the animation to play
          let dateBotAnimation = "talk()";
          dateBotObject.voice.text = dateToDisplay.activity; // Sets the words that DateBot will say.
@@ -114,7 +123,7 @@ class DateBotView {
     /** Say something witty */
     saySomethingWitty(callback, wittyComment, dateBotObject){
         // Sets the words that DateBot will say.
-        dateBotObject.voice.text = wittyComment; // TODO: This is where she can say something random 
+        dateBotObject.voice.text = wittyComment;
         window.speechSynthesis.speak(dateBotObject.voice); // Cause DateBot to speak
         // Play the talk animation
         dateBotObject.dateBotView.playAnimation("talk()");

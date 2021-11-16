@@ -55,17 +55,23 @@ class UserView {
      * Displays the user's options after DateBot presents a date idea
      */
     displayUserOptions(indexOfNextDate, dateBotObject, userObject, listOfPerfectDates) {
-        console.log("Displaying user options!");
 
-        // Grab all of the response buttons
-        const responseButtons = document.getElementsByClassName('response-button');
-        // Grabe the first button
-        let nextButton = responseButtons[0];
-        // Change the text of the first reponse button
-        nextButton.innerHTML = "Next Idea";
+        // Grab the user response div and overwrite the innerHTML with the new user options
+        document.getElementById('user-responses-div').innerHTML = `
+        <button class="response-button" id="response-button-1">Next Idea</button>
+        `
+        // Grab the nextButton
+        let nextButton = document.getElementById('response-button-1');
         // Make it visible
-        nextButton.style.display = "inline";
+        nextButton.style.display = 'inline';
+        
         // Add the event listener to make it do its thing
+        nextButton.addEventListener("click", () => {
+            // When the user clicks on the button, display the corresponding date and show the button
+            dateBotObject.dateBotView.displayPerfectDate(dateBotObject, listOfPerfectDates, indexOfNextDate, userObject);
+            document.getElementById('response-button-1').style.display = 'none';
+        });
+
         
     }
 
