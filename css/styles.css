@@ -110,6 +110,20 @@ Style the response buttons
   */
  
   margin-bottom: 10px;
+  cursor: pointer;
+}
+@keyframes wiggle {
+  0% {transform: rotate(0deg);}
+  25% {transform: rotate(.5deg);}
+  75% {transform: rotate(-.5deg);}
+}
+.response-button:hover {
+  /*background-color: #BB535F;*/
+  /*
+  animation: wiggle;
+  animation-duration: .5s;
+  */
+  background-color: #BB535F;
 }
 
 /* Style the button container */
