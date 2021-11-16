@@ -2,7 +2,7 @@ import getNewJsonList from "../utilities/ajaxHelper.js";
 
 // This obect holds all of the user's preferences for their date
 const userPreferences = {
-    budget: "undefined",
+    budget: undefined,
     season: "undefined",
     time: "undefined"
 }
@@ -23,19 +23,19 @@ export default class DateBotModel {
                 userPreferences.budget = "Free";
                 break;
             case "$5 max":
-                userPreferences.budget = "5";
+                userPreferences.budget = 5;
                 break;
             case "$10 max":
-                userPreferences.budget = "10";
+                userPreferences.budget = 10;
                 break;
             case "$20 max":
-                userPreferences.budget = "20";
+                userPreferences.budget = 20;
                 break;
             case "$30 max":
-                userPreferences.budget = "30";
+                userPreferences.budget = 30;
                 break;
             case "$50 or more":
-                userPreferences.budget = "50";
+                userPreferences.budget = 999;
                 break;
             
             // Season answers
@@ -84,11 +84,49 @@ export default class DateBotModel {
     }
 
     /**
+     * Filters a list of dates for the dates that meet the user's preferences
+     */
+     filterForPerfectDates(listOfAllDates) {
+        console.log("Filtering for perfect dates!");
+        // Create a separate list to house the list of perfect dates
+        let listOfPerfectDates = new Array();
+
+        // Loop through the listOfAllDates
+        listOfAllDates.forEach(date => {
+            // Check if the season matches the user's preference or any season
+            if (date.season == userPreferences.season || date.season == "Any season") {
+                console.log("Date matches season");
+                // If it does, check if the user's budget is greater than 
+                // or equal to the minimum price of the date
+                if (userPreferences.budget >= date.minPrice) {
+                    // If it is, check if the time of day is equal to the
+                    // user's preference or if the time is Any time
+                    console.log("Date matches price");
+
+                    if (date.timeOfDay == userPreferences.time || date.timeOfDay == "Any time"){
+                        // If it is, then it meets all of the criteria to be a perfect date.
+                        // Add it to the list of perfect dates
+                        console.log("Date matches time of day");
+                        listOfPerfectDates.push(date);
+                    }
+
+                }
+
+            }
+            
+        });
+
+        // Return the list of perfect dates to the user
+        return listOfPerfectDates;
+
+    }
+
+    /**
      * Calls an ajax request to return the list of possible dates.
      * Filters the list according to what she rememnbers from the user
      * Takes a callback as an argument. The callback will be called after the code is done doing its thing.
      */
-    getPerfectDate(callBack, intermediateFunction){
+    getPerfectDate(dateBotObject, callBack, intermediateFunction, userObject){
 
         // Create a new promise that will use AJAX to retrieve the perfect date
         // from the date-a-base
@@ -100,7 +138,8 @@ export default class DateBotModel {
                 
                 // If it is successful, resolve the promise with the response
                 if (this.status == 200) {
-                    resolve(this.responseText);
+                    console.log(this.responseText);
+                    resolve(JSON.parse(this.responseText));
                 }
                 // If it is not successful. Reject it with the error
                 else {
@@ -119,11 +158,14 @@ export default class DateBotModel {
             getDates.then(
                 // If it was successful...
                 function(value){
+                    console.log(`Length of list returned: ${value.length}`);
+                    console.log(`Request returned: ${value[0].activity}`);
                     // Filter the returned list of date objects for the perfect date
-                    console.log("Filtering for perfect date");
-                    let perfectDate = value;
+                    let listOfPerfectDates = dateBotObject.model.filterForPerfectDates(value);
+                    console.log(`There is ${listOfPerfectDates.length} date in the list of perfect dates`);
                     // Calls the callback function with the perfect date as a parameter
-                    callBack(perfectDate);
+                    // The callback function is the view's displayPerfectDate() method
+                    callBack(dateBotObject, listOfPerfectDates, 0, userObject);
                 },
                 function(error){console.log(`Error! ${error}`);}
             )
@@ -142,14 +184,12 @@ export default class DateBotModel {
                 
                 // If it is successful, resolve the promise with the response
                 if (this.status == 200) {
-                    console.log(`something witty = ${this.responseText}`);
+                    // Parse the witty comment list and store it in a variable
                     let listOfWittyComments = JSON.parse(this.responseText);
                     // Filter the list for a witty comment by choosing a random number between 1 and the length of the list
                     let randomNumber = Math.floor(Math.random() * listOfWittyComments.length);
-                    console.log("The randome number is " + randomNumber);
-                    console.log(`The witty comment object is ${listOfWittyComments[randomNumber]}`);
                     let wittyComment = listOfWittyComments[randomNumber].comment;
-                    console.log(`Witty comment: ${wittyComment}`);
+                    // Make DateBot say something witty by calling the method in the view
                     dateBotObject.dateBotView.saySomethingWitty(callback, wittyComment, dateBotObject);
                 }
                 // If it is not successful. Reject it with the error
@@ -161,6 +201,8 @@ export default class DateBotModel {
             xhttp.send();
 
     }
+
+    
 
 
 }

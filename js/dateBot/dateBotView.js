@@ -86,9 +86,29 @@ class DateBotView {
 
     /**
      * Displays the perfect date to the user
+     * Takes the perfect date object as a parameter
      */
-     displayPerfectDate(perfectDate){
-         console.log(`Displaying ${perfectDate}`);
+     displayPerfectDate(dateBotObject, listOfPerfectDates, indexOfDateToDisplay, userObject){
+         // Grab the index of the next date to display
+         let indexOfNextDate = indexOfDateToDisplay + 1;
+         // Set the date to display 
+         let dateToDisplay = listOfPerfectDates[indexOfDateToDisplay];
+         // grab the animation to play
+         let dateBotAnimation = "talk()";
+         dateBotObject.voice.text = dateToDisplay.activity; // Sets the words that DateBot will say.
+         window.speechSynthesis.speak(dateBotObject.voice); // Cause DateBot to speak
+         // Play the animation
+         dateBotObject.dateBotView.playAnimation(dateBotAnimation);
+         // Display dateBot's response to the user
+         dateBotObject.dateBotView.displayResponse(dateToDisplay.activity);
+         // When DateBot finishes talking...
+         dateBotObject.voice.onend = function() {
+             // Change DateBot back to smiling
+             dateBotObject.dateBotView.playAnimation("smile");
+             // Have the user display the user options
+             userObject.userView.displayUserOptions(indexOfNextDate, dateBotObject, userObject, listOfPerfectDates);
+         };
+
     }
 
     /** Say something witty */

@@ -79,7 +79,7 @@ export default class DateBotController {
                     // Check if it is time to find a date
                     if (objectCallingFunction.model.timeToFindADate) {
                         // Find the user the perfect date!
-                        objectCallingFunction.findPerfectDate(objectCallingFunction);
+                        objectCallingFunction.findPerfectDate(objectCallingFunction, userObject);
                     }
                     else {
                         // Have the user process DateBot's response
@@ -103,20 +103,16 @@ export default class DateBotController {
     /**
      * Here, datebot finds the perfect date for the user
      */
-    findPerfectDate(dateBotObject){
+    findPerfectDate(dateBotObject, userObject){
 
         // Create the intermediate function to play while DateBot is processing the user's request.
         function saySomethingWhileProcessingRequest(callback) {
-            console.log("Inside intermediate function");
             // Grab a witty comment
             dateBotObject.model.comeUpWithSomethingWittyToSay(dateBotObject, callback);
-            // Have DateBot say the witty comment
-            //dateBotObject.dateBotView.saySomethingWitty(callback, wittyComment, dateBotObject);
-            
         }
 
         // Get the perfect date from the model
-        dateBotObject.model.getPerfectDate(dateBotObject.dateBotView.displayPerfectDate, saySomethingWhileProcessingRequest);
+        dateBotObject.model.getPerfectDate(dateBotObject, dateBotObject.dateBotView.displayPerfectDate, saySomethingWhileProcessingRequest, userObject);
     }
 
     
