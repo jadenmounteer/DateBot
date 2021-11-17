@@ -120,21 +120,32 @@ class DateBotView {
 
     }
 
-    /** Say something witty */
-    saySomethingWitty(callback, wittyComment, dateBotObject){
+    /**
+     * The generic method for making DateBot say something
+     * @param {*} message 
+     */
+    saySomething(dateBotObject, userObject, message, animation, callBack, introducingDates, additionalCallbackParameter) {
         // Sets the words that DateBot will say.
-        dateBotObject.voice.text = wittyComment;
+        dateBotObject.voice.text = message;
         window.speechSynthesis.speak(dateBotObject.voice); // Cause DateBot to speak
         // Play the talk animation
-        dateBotObject.dateBotView.playAnimation("talk()");
+        dateBotObject.dateBotView.playAnimation(animation);
         // Display dateBot's response to the user
-        dateBotObject.dateBotView.displayResponse(wittyComment);
+        dateBotObject.dateBotView.displayResponse(message);
         // When DateBot finishes talking...
         dateBotObject.voice.onend = function() {
             // Change DateBot back to smiling
             dateBotObject.dateBotView.playAnimation("smile");
-            // The callback is played after DateBot finishes talking
-            callback();
+            // If DateBot is introducing dates...
+            if (introducingDates) {
+                // Call the callback with the following arguments...
+                callBack(dateBotObject, additionalCallbackParameter, 0, userObject);
+            }
+            // If not...
+            else {
+                // Simply call the callback function
+                callBack();
+            }
         };
 
     }

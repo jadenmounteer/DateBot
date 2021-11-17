@@ -108,11 +108,11 @@ export default class DateBotController {
         // Create the intermediate function to play while DateBot is processing the user's request.
         function saySomethingWhileProcessingRequest(callback) {
             // Grab a witty comment
-            dateBotObject.model.comeUpWithSomethingWittyToSay(dateBotObject, callback);
+            dateBotObject.model.comeUpWithSomethingWittyToSay(dateBotObject, callback, userObject);
         }
 
         // Get the perfect date from the model
-        dateBotObject.model.getPerfectDate(dateBotObject, dateBotObject.dateBotView.displayPerfectDate, saySomethingWhileProcessingRequest, userObject);
+        dateBotObject.model.getPerfectDate(dateBotObject, saySomethingWhileProcessingRequest, userObject);
     }
 
     

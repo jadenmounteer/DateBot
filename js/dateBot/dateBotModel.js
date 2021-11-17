@@ -108,8 +108,6 @@ export default class DateBotModel {
                     if (date.timeOfDay == userPreferences.time || date.timeOfDay == "Any time" || date.timeOfDay.includes(userPreferences.time)){
                         // If it is, then it meets all of the criteria to be a perfect date.
                         // Add it to the list of perfect dates
-                        console.log("Date matches time of day");
-                        console.log(`pushing date: ${date.activiy}`);
                         listOfPerfectDates.push(date);
                     }
 
@@ -150,7 +148,7 @@ export default class DateBotModel {
      * Filters the list according to what she rememnbers from the user
      * Takes a callback as an argument. The callback will be called after the code is done doing its thing.
      */
-    getPerfectDate(dateBotObject, callBack, intermediateFunction, userObject){
+    getPerfectDate(dateBotObject, intermediateFunction, userObject){
 
         // Create a new promise that will use AJAX to retrieve the perfect date
         // from the date-a-base
@@ -184,9 +182,8 @@ export default class DateBotModel {
             getDates.then(
                 // If it was successful...
                 function(value){
-                    // Calls the callback function with the perfect date as a parameter
-                    // The callback function is the view's displayPerfectDate() method
-                    callBack(dateBotObject, value, 0, userObject);
+                    // Have DateBot tell the user she has found some dates...
+                    dateBotObject.dateBotView.saySomething(dateBotObject, userObject, "Thank you for waiting. I have found some dates I think you will like. Here they are.", "talk()", dateBotObject.dateBotView.displayPerfectDate, true, value);
                 },
                 function(error){console.log(`Error! ${error}`);}
             )
@@ -198,7 +195,7 @@ export default class DateBotModel {
      * DateBot comes up with something witty to say 
      * by making an http request to a JSON file.
      */
-    comeUpWithSomethingWittyToSay(dateBotObject, callback){
+    comeUpWithSomethingWittyToSay(dateBotObject, callback, userObject){
             const xhttp = new XMLHttpRequest();
 
             xhttp.onload = function() {
@@ -211,11 +208,11 @@ export default class DateBotModel {
                     let randomNumber = Math.floor(Math.random() * listOfWittyComments.length);
                     let wittyComment = listOfWittyComments[randomNumber].comment;
                     // Make DateBot say something witty by calling the method in the view
-                    dateBotObject.dateBotView.saySomethingWitty(callback, wittyComment, dateBotObject);
+                    dateBotObject.dateBotView.saySomething(dateBotObject, userObject, wittyComment, "talk()", callback, false);
                 }
                 // If it is not successful. Reject it with the error
                 else {
-                    return "Please wait while I process your request";
+                    return "Error processing request";
                 }
             };
             xhttp.open("GET", "./json/dateBotWittyComments.json");
