@@ -56,7 +56,7 @@ document.getElementById("get-started-button").addEventListener(buttonEvent, () =
     `;
 
     // Initialize dateBot
-    setTimeout(function(){ dateBot.initialize(user); }, 2000);
+    setTimeout(function(){ dateBot.initialize(user); }, 500);
 
     // Create an onclick event for the initial buttons for the user's response
     document.getElementById("response-button-1").addEventListener("click", () => {user.respond(1, user, dateBot)});
