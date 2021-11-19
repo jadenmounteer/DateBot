@@ -2,92 +2,20 @@
 Color Pallete: https://coolors.co/1c5d0b-5ca449-b5e1aa-377b70-8cb8b1-c38257-ffdac1-6a0c17-bb535f-e28993
 Robot made using Piskel: https://www.piskelapp.com/
 */
-
 /* FONTS */
-
 /* 
 Roboto: Body text
 font-family: 'Roboto', sans-serif;
 */
-@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@1,500&display=swap');
-
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@1,500&display=swap");
 /* Body copy
 font-family: Arial, Helvetica, sans-serif;
 */
-
 /* 
 Title
 font-family: 'Press Start 2P', cursive;
 */
-
-@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
-
-/* Reset the margin and padding of everything so we can get rid of the white border that the browser gives us by default*/
-* {
-  margin: 0;
-  padding: 0;
-}
-
-/* Style the document body */
-body {
-    background-color: #B5E1AA;
-}
-
-header {
-  background-color: #377B70;
-  /*
-  width: 100%;
-  */
-  padding: .5em;
- 
-}
-/* Style the page title */
-#page-title {
-    font-family: 'Press Start 2P', cursive;
-    color: #B5E1AA;
-    /*
-    font-size: 4em;
-    */
-}
-
-
-
-
-/* Style the speech bubble */
-#speech-bubble {
-    width: 50%;
-    margin: auto;
-    margin-top: 50px;
-    background: #FFDAC1;
-    padding: 20px;
-    text-align: left;
-    font-weight: 900;
-    color: black;
-    font-family: arial;
-    position: relative;
-    font-size: 1.1em;
-    margin-top: 20px;
-
-    box-shadow: 1px 1px 4px 1px #888;
-    border-radius: 3px 3px 3px 3px;
-
-  }
-  
-#speech-bubble::before {
-  content: "";
-  width: 0px;
-  height: 0px;
-  position: absolute;
-  border-left: 10px solid #FFDAC1;
-  border-right: 10px solid transparent;
-  border-top: 10px solid #FFDAC1;
-  border-bottom: 10px solid transparent;
-  left: 50%;
-  bottom: -19px;
-
-  box-shadow: 1px  #888;
-}
-
+@import url("https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap");
 /* 
 Style the response buttons
 */
@@ -108,40 +36,100 @@ Style the response buttons
   /*
   Center the buttons 
   */
- 
   margin-bottom: 10px;
   cursor: pointer;
-}
+  transition: .5s; }
+
 @keyframes wiggle {
-  0% {transform: rotate(0deg);}
-  25% {transform: rotate(.5deg);}
-  75% {transform: rotate(-.5deg);}
-}
+  0% {
+    transform: rotate(0deg); }
+  25% {
+    transform: rotate(0.5deg); }
+  75% {
+    transform: rotate(-0.5deg); } }
 .response-button:hover {
   /*background-color: #BB535F;*/
   /*
   animation: wiggle;
   animation-duration: .5s;
   */
-  background-color: #BB535F;
-}
+  background-color: #BB535F; }
+
+/* Style the speech bubble */
+#speech-bubble {
+  width: 50%;
+  margin: auto;
+  margin-top: 50px;
+  background: #FFDAC1;
+  padding: 20px;
+  text-align: left;
+  font-weight: 900;
+  color: black;
+  font-family: arial;
+  position: relative;
+  font-size: 1.1em;
+  margin-top: 20px;
+  box-shadow: 1px 1px 4px 1px #888;
+  border-radius: 3px 3px 3px 3px; }
+
+#speech-bubble::before {
+  content: "";
+  width: 0px;
+  height: 0px;
+  position: absolute;
+  border-left: 10px solid #FFDAC1;
+  border-right: 10px solid transparent;
+  border-top: 10px solid #FFDAC1;
+  border-bottom: 10px solid transparent;
+  left: 50%;
+  bottom: -19px;
+  box-shadow: 1px  #888; }
+
+/* Style the page title */
+#page-title {
+  font-family: "Press Start 2P", cursive;
+  color: #B5E1AA;
+  /*
+  font-size: 4em;
+  */ }
+
+header {
+  background-color: #377B70;
+  /*
+  width: 100%;
+  */
+  padding: .5em; }
+
+#date-bot-div {
+  margin-top: 20px;
+  text-align: center; }
+
+#datebot-gif {
+  max-width: 500px; }
 
 /* Style the button container */
-#user-responses-div{
+#user-responses-div {
   margin-top: -80px;
   display: flex;
   justify-content: space-around;
   flex-direction: row;
   flex-wrap: wrap;
-  align-items: center;
-  
-}
+  align-items: center; }
 
-#date-bot-div {
-  width: 100%;
-  margin-top: 20px;
-}
+/* Style the document body */
+body {
+  background-color: #B5E1AA; }
 
-#datebot-gif {
- 
-}
+main {
+  max-width: 1500px;
+  margin: 0 auto; }
+  @media (min-width: 950px) {
+    main {
+      margin-top: 50px; } }
+
+/* Reset the margin and padding of everything so we can get rid of the white border that the browser gives us by default*/
+* {
+  margin: 0;
+  padding: 0; }
+
+/*# sourceMappingURL=styles.css.map */

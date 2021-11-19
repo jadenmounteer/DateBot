@@ -1,0 +1,11 @@
+main {
+    max-width: 1500px;
+    //border: 2px solid black;
+    margin: 0 auto;
+    
+    // When the screen is medium..
+    @include breakpoint(medium) {
+        // Move it down a bit
+        margin-top: 50px;
+      }
+}

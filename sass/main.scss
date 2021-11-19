@@ -1,0 +1,55 @@
+/*
+Color Pallete: https://coolors.co/1c5d0b-5ca449-b5e1aa-377b70-8cb8b1-c38257-ffdac1-6a0c17-bb535f-e28993
+Robot made using Piskel: https://www.piskelapp.com/
+*/
+
+/* FONTS */
+
+/* 
+Roboto: Body text
+font-family: 'Roboto', sans-serif;
+*/
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@1,500&display=swap');
+
+/* Body copy
+font-family: Arial, Helvetica, sans-serif;
+*/
+
+/* 
+Title
+font-family: 'Press Start 2P', cursive;
+*/
+
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+// VARIABLES
+$body-background-color: #B5E1AA;
+$body-second-color: #377B70;
+$header-color: #377B70;
+$header-font: 'Press Start 2P', cursive;
+$speech-bubble-color: #FFDAC1;
+
+// Breakpoints
+$break-large: 1700px;
+$break-medium: 950px;
+$break-small: 510px;
+
+// Import the modularized Sass parials
+@import "components/response-button.scss";
+@import "components/speech-bubble.scss";
+
+@import "layout/layout-mixins";
+
+@import "blocks/header.scss";
+@import "blocks/date-bot-div";
+@import "blocks/user-response-div";
+@import "blocks/body";
+@import "blocks/main";
+
+/* Reset the margin and padding of everything so we can get rid of the white border that the browser gives us by default*/
+* {
+  margin: 0;
+  padding: 0;
+}
+
+

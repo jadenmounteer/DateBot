@@ -1,0 +1,38 @@
+/* 
+Style the response buttons
+*/
+.response-button {
+    background-color: #5CA449;
+    border: none;
+    color: white;
+    padding: 20px 30px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 1.1em;
+    box-shadow: 1px 1px 4px 1px #888;
+    border-radius: 3px 3px 3px 3px;
+    /* Default the buttons to invisible */
+    display: none;
+    max-width: 200px;
+    min-width: 200px;
+    /*
+    Center the buttons 
+    */
+   
+    margin-bottom: 10px;
+    cursor: pointer;
+    transition: .5s;
+  }
+  @keyframes wiggle {
+    0% {transform: rotate(0deg);}
+    25% {transform: rotate(.5deg);}
+    75% {transform: rotate(-.5deg);}
+  }
+  .response-button:hover {
+    /*background-color: #BB535F;*/
+    /*
+    animation: wiggle;
+    animation-duration: .5s;
+    */
+    background-color: #BB535F;
+  }

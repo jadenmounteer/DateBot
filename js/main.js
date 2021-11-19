@@ -39,7 +39,7 @@ document.getElementById("get-started-button").addEventListener(buttonEvent, () =
     <!-- The datebot -->
 
     <div id="date-bot-div">
-    <img id="datebot-gif" src="assets/DateBot-blinking-straight-face.gif" width="500">
+    <img id="datebot-gif" src="assets/DateBot-blinking-straight-face.gif" width="100%" height="auto">
     </div>
     
     <div id="user-responses-div">

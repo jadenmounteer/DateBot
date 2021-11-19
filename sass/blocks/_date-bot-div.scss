@@ -1,0 +1,16 @@
+#date-bot-div {
+    //width: 100%;
+    margin-top: 20px;
+    // Center DateBot
+    text-align: center;
+    // When the screen is small...
+    @include breakpoint(small) {
+        // Shrink DateBot down
+        //width: 20%; 
+      }
+  }
+
+
+#datebot-gif {
+    max-width: 500px;
+}
