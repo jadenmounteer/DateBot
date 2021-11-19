@@ -1,13 +1,14 @@
 /* Style the speech bubble */
 #speech-bubble {
-    width: 50%;
+    //width: 50%;
+    max-width: 500px;
     margin: auto;
     margin-top: 50px;
     background: $speech-bubble-color;
     padding: 20px;
     text-align: left;
     font-weight: 900;
-    color: black;
+    color: white;
     font-family: arial;
     position: relative;
     font-size: 1.1em;

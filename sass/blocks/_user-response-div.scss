@@ -1,10 +1,11 @@
 /* Style the button container */
 #user-responses-div{
-    margin-top: -80px;
     display: flex;
     justify-content: space-around;
     flex-direction: row;
     flex-wrap: wrap;
     align-items: center;
-    
+    max-width: 500px;
+    margin: 0 auto;
+    margin-top: -80px;
   }
