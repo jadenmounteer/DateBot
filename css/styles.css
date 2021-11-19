@@ -23,7 +23,7 @@ Style the response buttons
   background-color: #5CA449;
   border: none;
   color: white;
-  padding: 20px 30px;
+  padding: 10px 20px;
   text-align: center;
   text-decoration: none;
   font-size: 1.1em;
@@ -39,6 +39,9 @@ Style the response buttons
   margin-bottom: 10px;
   cursor: pointer;
   transition: .5s; }
+  @media (min-width: 1700px) {
+    .response-button {
+      padding: 20px 30px; } }
 
 @keyframes wiggle {
   0% {

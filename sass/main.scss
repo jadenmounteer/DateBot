@@ -35,11 +35,9 @@ $break-medium: 950px;
 $break-small: 510px;
 
 // Import the modularized Sass parials
+@import "layout/layout-mixins";
 @import "components/response-button.scss";
 @import "components/speech-bubble.scss";
-
-@import "layout/layout-mixins";
-
 @import "blocks/header.scss";
 @import "blocks/date-bot-div";
 @import "blocks/user-response-div";

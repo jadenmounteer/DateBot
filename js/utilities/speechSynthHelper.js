@@ -5,15 +5,12 @@
 function initializeVoice(voiceObject, userObject, dateBotView) {
     // Check if user is on mobile
     if(/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)){
-        // true for mobile device
-        alert("User is on mobile");
         // Since user is on mobile, rather than choosing a voice, we let the phone pick the voice
         setVoiceMessage(voiceObject, "Hello I'm DateBot! I'm here to help you find the perfect activity for your date.", userObject);
         dateBotView.talk(4600);
       }
     // If user is not on mobile
     else {
-        console.log("User is not on mobile");
         // Configure DateBot's speech properties
         let voices = [];
         window.speechSynthesis.onvoiceschanged = () => {

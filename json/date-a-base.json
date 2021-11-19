@@ -148,5 +148,6 @@
     {"activity":"Buy some cheap RC cars and race them", "season":"Spring Summer", "minPrice":20, "timeOfDay":"Morning Afternoon Evening"},
     {"activity":"Make caramel apples", "season":"Fall", "minPrice":10, "timeOfDay":"Morning Afternoon Evening"},
     {"activity":"Go to a baseball game", "season":"Summer", "minPrice":10, "timeOfDay":"Afternoon Evening"},
-    {"activity":"Make a gingerbread house", "season":"Winter", "minPrice":10, "timeOfDay":"Any time"}
+    {"activity":"Make a gingerbread house", "season":"Winter", "minPrice":10, "timeOfDay":"Any time"},
+    {"activity":"Go fishing", "season":"Spring Summer", "minPrice":5, "timeOfDay":"Early Morning Morning Afternoon Evening"}
 ]
