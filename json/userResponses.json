@@ -33,7 +33,7 @@
         "response3":"I've been better"},
 
     {"dateBotResponse":"According to Ernst Fehr in his article, The Economics of Impatience, In experiments, animals often prefer smaller, immediate rewards over larger rewards that are deferred — thus failing to maximize their total gain. Many people exhibit similar behaviour. Are you an animal?",
-    "response1":"I'm sorry for being impatient. I'm ready when you are.", 
+    "response1":"I'm sorry for being impatient.", 
     "response2":"I guess I am an animal",
         "response3":"No I am not an animal"},
 
@@ -46,7 +46,7 @@
         "response1":"Sure thing!", 
         "response2":"Well, it might be a bit weird if I pulled you out while I'm on a date"},
     
-    {"dateBotResponse":"Success is not final; Failure is not fatal; It is the courage to continue that counts. That is a motivational quote I found on the internet by Winston Churchill. I imagine you feel a bit better now. Humans need some motivation once in a while.",
+    {"dateBotResponse":"Success is not final; Failure is not fatal; It is the courage to continue that counts. That is a motivational quote I found on the internet by Winston Churchill. I imagine you feel a bit better now.",
         "response1":"Thank you for the motivation.", 
         "response2":"I didn't know you could search the internet. What else can you do?"},
     
@@ -56,5 +56,47 @@
         "response3":"What do you do?", 
         "response4":"Can you give me some advice for dating?", 
         "response5":"Can I view my list of favorite dates?", 
-        "response6":"Option not available"}
+        "response6":"Option not available"},
+
+    {"dateBotResponse":"No matter. I imagine I'm quite lively for a robot. Now, shall we find you the perfect activity for your date?",
+        "response1":"Let's get started", 
+        "response2":"What do you do?", 
+        "response3":"Can you give me some advice for dating?", 
+        "response4":"Can I view my list of favorite dates?"},
+
+    {"dateBotResponse":"No problem. Humans can often be unstable. It's in your programming. Shall we get started with finding you the perfect date activity?",
+        "response1":"Let's get started", 
+        "response2":"What do you do?", 
+        "response3":"Can you give me some advice for dating?", 
+        "response4":"Can I view my list of favorite dates?"},
+    
+    {"dateBotResponse":"I expect you to have a bit of empathy. Now, shall we find you the perfect activity for your date? Hopefully you will show your partner a bit more respect.",
+        "response1":"Let's get started", 
+        "response2":"What do you do?", 
+        "response3":"Can you give me some advice for dating?", 
+        "response4":"Can I view my list of favorite dates?"},
+    
+    {"dateBotResponse":"Thank you! I would like that very much. Anyways, shall we find you the perfect date activity? Particularly a sunny one?",
+        "response1":"Let's get started", 
+        "response2":"What do you do?", 
+        "response3":"Can you give me some advice for dating?", 
+        "response4":"Can I view my list of favorite dates?"},
+
+    {"dateBotResponse":"I imagine you've done weirder things on dates. No matter, shall we find you the perfect date activity?",
+        "response1":"Let's get started", 
+        "response2":"What do you do?", 
+        "response3":"Can you give me some advice for dating?", 
+        "response4":"Can I view my list of favorite dates?"},
+    
+    {"dateBotResponse":"No problem at all. Shall we find you the perfect date activity?",
+        "response1":"Let's get started", 
+        "response2":"What do you do?", 
+        "response3":"Can you give me some advice for dating?", 
+        "response4":"Can I view my list of favorite dates?"},
+    
+    {"dateBotResponse":"I can do many things. I can talk using a Text to Speech API. I pull ideas for dates from my date-a-base. Now, shall we find you the perfect date activity?",
+        "response1":"Let's get started", 
+        "response2":"What do you do?", 
+        "response3":"Can you give me some advice for dating?", 
+        "response4":"Can I view my list of favorite dates?"}
 ]

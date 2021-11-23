@@ -2,6 +2,10 @@
       {"userResponse":"Hello DateBot! Let's get started",
              "dateBotResponse":"Alright! I'm excited to help you find the perfect date! First question: what is your budget?",
               "animation":"talk()"},
+
+      {"userResponse":"Let's get started",
+      "dateBotResponse":"Alright! I'm excited to help you find the perfect date! First question: what is your budget?",
+            "animation":"talk()"},
       
       {"userResponse":"I want a free date",
       "dateBotResponse":"Excellent! Second question: what is the current season?",
@@ -110,7 +114,7 @@
                   "animation":"talk()"},
 
       {"userResponse":"I've been better",
-            "dateBotResponse":"Success is not final; Failure is not fatal; It is the courage to continue that counts. That is a motivational quote I found on the internet by Winston Churchill. I imagine you feel a bit better now. Humans need some motivation once in a while.",
+            "dateBotResponse":"Success is not final; Failure is not fatal; It is the courage to continue that counts. That is a motivational quote I found on the internet by Winston Churchill. I imagine you feel a bit better now.",
                   "animation":"talk()"},
       
       {"userResponse":"Why do you help people find dates?",
@@ -142,11 +146,11 @@
                   "animation":"talk()"},
       
       {"userResponse":"I didn't know you could search the internet. What else can you do?",
-            "dateBotResponse":"I can do many things. I was created using HTML, CSS, and JavaScript. I can talk using a Text to Speech API. I pull ideas for dates from my date-a-base. Now, shall we find you the perfect date activity?",
+            "dateBotResponse":"I can do many things. I can talk using a Text to Speech API. I pull ideas for dates from my date-a-base. Now, shall we find you the perfect date activity?",
                   "animation":"talk()"},
 
-      {"userResponse":"I'm sorry for being impatient. I'm ready when you are.",
-            "dateBotResponse":"No problem. Humans can often be unstable. It's in your programming. Let's get to it then!",
+      {"userResponse":"I'm sorry for being impatient.",
+            "dateBotResponse":"No problem. Humans can often be unstable. It's in your programming. Shall we get started with finding you the perfect date activity?",
                   "animation":"talk()"},
 
       {"userResponse":"I guess I am an animal",

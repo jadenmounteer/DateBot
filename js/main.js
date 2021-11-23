@@ -28,21 +28,28 @@ if(/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigat
 else {
     buttonEvent = "click"
 }
-// Add an event listener to the get started button
-document.getElementById("get-started-button").addEventListener(buttonEvent, () => {
+// Add an event listener to the on button
+document.getElementById("on-button").addEventListener(buttonEvent, () => {
+    // Make the button invisible
+    event.target.style.display = 'none';
+    // DateBot turns on by playing the animation
+    const dateBotGif = document.getElementById('datebot-gif');
+    dateBotGif.src = "assets/DateBot Initializing.gif";
 
-    // Insert the necessary html
+    // Change the necessary html after the animation stops playing
+    setTimeout(function(){ 
 
-    document.getElementsByTagName("main")[0].innerHTML = `
-    <div id="speech-bubble">Hello I am DateBot! I'm here to help you find the perfect activity for your date.</div>          
+        // Remove the invisble class from speech bubble
+        const speechBubble = document.getElementById('speech-bubble');
+        speechBubble.classList.remove('speech-bubble-invisible');
+        speechBubble.innerHTML = "Hello I am DateBot! I'm here to help you find the perfect activity for your date.";
 
-    <!-- The datebot -->
+        // Change datebot to the correct animation
+        dateBotGif.classList.remove('datebot-sleeping');
 
-    <div id="date-bot-div">
-    <img id="datebot-gif" src="assets/DateBot-blinking-straight-face.gif" width="100%" height="auto">
-    </div>
-    
-    <div id="user-responses-div">
+        // Change the buttons
+        document.getElementById('user-responses-div').innerHTML = `
+        <div id="user-responses-div">
 
           <button class="response-button" id="response-button-1">Hello DateBot! Let's get started</button>
           <button class="response-button" id="response-button-2">Hello DateBot! How are you?</button>
@@ -51,12 +58,11 @@ document.getElementById("get-started-button").addEventListener(buttonEvent, () =
           <button class="response-button" id="response-button-5">Can I view my list of favorite dates?</button>
           <button class="response-button" id="response-button-6">Option not available</button>
         </div>
-
-    
-    `;
+        `;
 
     // Initialize dateBot
-    setTimeout(function(){ dateBot.initialize(user); }, 500);
+    dateBot.initialize(user);
+    //setTimeout(function(){ dateBot.initialize(user); }, 500);
 
     // Create an onclick event for the initial buttons for the user's response
     document.getElementById("response-button-1").addEventListener("click", () => {user.respond(1, user, dateBot)});
@@ -65,6 +71,13 @@ document.getElementById("get-started-button").addEventListener(buttonEvent, () =
     document.getElementById("response-button-4").addEventListener("click", () => {user.respond(4, user, dateBot)});
     document.getElementById("response-button-5").addEventListener("click", () => {user.respond(5, user, dateBot)});
     document.getElementById("response-button-6").addEventListener("click", () => {user.respond(6, user, dateBot)});
+
+
+     }, 3500);
+
+    
+
+    
 
 });
 

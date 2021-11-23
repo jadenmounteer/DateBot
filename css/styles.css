@@ -58,6 +58,9 @@ Style the response buttons
   */
   background-color: #BB535F; }
 
+#on-button {
+  display: block; }
+
 /* Style the speech bubble */
 #speech-bubble {
   max-width: 500px;
@@ -88,16 +91,19 @@ Style the response buttons
   bottom: -19px;
   box-shadow: 1px  #888; }
 
+.speech-bubble-invisible {
+  display: none; }
+
 /* Style the page title */
 #page-title {
   font-family: "Press Start 2P", cursive;
-  color: #B5E1AA;
+  color: white;
   /*
   font-size: 4em;
   */ }
 
 header {
-  background-color: #377B70;
+  background-color: #5CA449;
   /*
   width: 100%;
   */
@@ -110,6 +116,9 @@ header {
 #datebot-gif {
   max-width: 500px; }
 
+.datebot-sleeping {
+  margin-top: 102px; }
+
 /* Style the button container */
 #user-responses-div {
   display: flex;
@@ -119,7 +128,7 @@ header {
   align-items: center;
   max-width: 500px;
   margin: 0 auto;
-  margin-top: -80px; }
+  margin-top: -40px; }
 
 /* Style the document body */
 body {
