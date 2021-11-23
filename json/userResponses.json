@@ -21,11 +21,6 @@
         "response4":"Evening",
         "response5":"Night",
         "response6":"Any time"},
-          
-    {"dateBotResponse":"I am DateBot, an artificial intelligence created to aid you in your quest of finding the perfect date activity. Can I ask you some questions to get started?",
-         "response1":"Ask away!",
-          "response2":"Why do you help people find dates?",
-           "response3":"No"},
 
     {"dateBotResponse":"I am doing, as you humans would say, fantabulous! How are you?",
         "response1":"I am doing great today!", 
@@ -95,6 +90,12 @@
         "response4":"Can I view my list of favorite dates?"},
     
     {"dateBotResponse":"I can do many things. I can talk using a Text to Speech API. I pull ideas for dates from my date-a-base. Now, shall we find you the perfect date activity?",
+        "response1":"Let's get started", 
+        "response2":"What do you do?", 
+        "response3":"Can you give me some advice for dating?", 
+        "response4":"Can I view my list of favorite dates?"},
+
+    {"dateBotResponse":"I am DateBot, an artificial intelligence created to aid you in your quest of finding the perfect date activity. Can I ask you some questions to get started?",
         "response1":"Let's get started", 
         "response2":"What do you do?", 
         "response3":"Can you give me some advice for dating?", 
