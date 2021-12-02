@@ -101,7 +101,6 @@ class DateBotView {
 
          // Grab the index of the next date to display
          let indexOfNextDate = indexOfDateToDisplay + 1;
-         console.log(`index of next date: ${indexOfNextDate}`);
          // grab the animation to play
          let dateBotAnimation = "talk()";
          dateBotObject.voice.text = dateToDisplay.activity; // Sets the words that DateBot will say.

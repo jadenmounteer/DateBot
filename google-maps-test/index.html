@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Local Context Restrictions</title>
+    <!--
+      <script src="place-searches.js"></script>
+    -->
+    <script src="map.js"></script>
+    
+    <link rel="stylesheet" href="map.css" />
+  </head>
+  <body>
+      <div id="map-wrapper">
+        <div id="map"></div>
+
+      </div>
+        
+   
+    
+
+    <!-- Async script executes immediately and must be after any DOM elements used in callback. -->
+        <script
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAFRvLiMnPq85X-DNWDOnzGVODPFXDRJvA&callback=initMap&libraries=localContext&v=beta&channel=2"
+      async
+    ></script>
+
+    
+    
+    <!-- The place searches map -->
+    <!--
+      <script
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAFRvLiMnPq85X-DNWDOnzGVODPFXDRJvA&callback=initMap&libraries=places&v=weekly&channel=2"
+      async
+    ></script>
+
+    -->
+    
+  </body>
+</html>

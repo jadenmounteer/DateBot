@@ -1,0 +1,14 @@
+/* Always set the map height explicitly to define the size of the div
+* element that contains the map. */
+#map {
+    /* Make the map take up 100% of its container */
+    height: 100%;
+}
+
+#map-wrapper {
+height: 50em;
+width: 50%;
+/* Center the map */
+margin: 0 auto;
+margin-top: 50px;
+}

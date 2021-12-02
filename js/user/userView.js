@@ -1,3 +1,6 @@
+// Import the internet search listener function so we can search the internet
+import  {setInternetSearchListener} from '../utilities/internetSearchHelper.js';
+
 class UserView {
 
     /* 
@@ -56,9 +59,15 @@ class UserView {
      */
     displayUserOptions(indexOfNextDate, dateBotObject, userObject, listOfPerfectDates) {
 
+        // Grab the internet search button label
+        const internetSearchButtonLabel = listOfPerfectDates[indexOfNextDate - 1].searchQueryButtonName;
+        // Grab the internet search query
+        const internetSearchQuery = listOfPerfectDates[indexOfNextDate - 1].internetSearchQuery;
+
         // Grab the user response div and overwrite the innerHTML with the new user options
         document.getElementById('user-responses-div').innerHTML = `
         <button class="response-button" id="response-button-1">Next Idea</button>
+        <button class="response-button" id="response-button-2">${internetSearchButtonLabel}</button>
         `
         // Grab the nextButton
         let nextButton = document.getElementById('response-button-1');
@@ -69,10 +78,17 @@ class UserView {
         nextButton.addEventListener("click", () => {
             // When the user clicks on the button, display the corresponding date and show the button
             dateBotObject.dateBotView.displayPerfectDate(dateBotObject, listOfPerfectDates, indexOfNextDate, userObject);
+            // Make the buttons invisible
             document.getElementById('response-button-1').style.display = 'none';
+            document.getElementById('response-button-2').style.display = 'none';
         });
 
-        
+        // Grab the internet search button
+        let internetSearchButton = document.getElementById('response-button-2');
+        // Make it visible
+        internetSearchButton.style.display = 'inline';
+        // Add the event listener to make it do its thing
+        setInternetSearchListener(internetSearchButton, internetSearchQuery);
     }
 
 

@@ -97,6 +97,18 @@
 
     {"dateBotResponse":"I am DateBot, an artificial intelligence created to aid you in your quest of finding the perfect date activity. Can I ask you some questions to get started?",
         "response1":"Let's get started", 
+        "response2":"Hello DateBot! How are you?",
+        "response3":"Can you give me some advice for dating?", 
+        "response4":"Can I view my list of favorite dates?"},
+    
+    {"dateBotResponse":"Well then stop acting like one and be patient. Well, now that that's out of the way, shall we get started?",
+        "response1":"Let's get started", 
+        "response2":"What do you do?", 
+        "response3":"Can you give me some advice for dating?", 
+        "response4":"Can I view my list of favorite dates?"},
+    
+    {"dateBotResponse":"Admitting you have a problem is the first step to recovery. Anyways, shall we find you the perfect date activity?",
+        "response1":"Let's get started", 
         "response2":"What do you do?", 
         "response3":"Can you give me some advice for dating?", 
         "response4":"Can I view my list of favorite dates?"}
