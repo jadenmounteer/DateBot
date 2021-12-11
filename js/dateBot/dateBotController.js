@@ -66,27 +66,37 @@ export default class DateBotController {
                 let dateBotAnimation = responseJsonData[i].animation;
                 // grab the animation duration
                 let dateBotAnimationDuration = responseJsonData[i].animationDuration;
-                objectCallingFunction.voice.text = dateBotResponse; // Sets the words that DateBot will say.
-                window.speechSynthesis.speak(objectCallingFunction.voice); // Cause DateBot to speak
-                // Play the animation
-                objectCallingFunction.dateBotView.playAnimation(dateBotAnimation);
-                // Display dateBot's response to the user
-                objectCallingFunction.dateBotView.displayResponse(dateBotResponse);
-                // When DateBot finishes talking...
-                objectCallingFunction.voice.onend = function() {
-                    // Change DateBot back to smiling
-                    objectCallingFunction.dateBotView.playAnimation("smile");
-                    // Check if it is time to find a date
-                    if (objectCallingFunction.model.timeToFindADate) {
-                        // Find the user the perfect date!
-                        objectCallingFunction.findPerfectDate(objectCallingFunction, userObject);
-                    }
-                    else {
-                        // Have the user process DateBot's response
-                        userObject.processDateBotsResponse(responseJsonData[i], objectCallingFunction);
-                    }
-                    
-                };
+                // If the user wants dating advice...
+                if (dateBotResponse == "User wants advice for dating") {
+                    // Advice for dating code will go here
+                    objectCallingFunction.giveUserDatingAdvice(objectCallingFunction, userObject);
+                }
+                // If the user does not want advice for dating...
+                else {
+                    objectCallingFunction.voice.text = dateBotResponse; // Sets the words that DateBot will say.
+                    window.speechSynthesis.speak(objectCallingFunction.voice); // Cause DateBot to speak
+                    // Play the animation
+                    objectCallingFunction.dateBotView.playAnimation(dateBotAnimation);
+                    // Display dateBot's response to the user
+                    objectCallingFunction.dateBotView.displayResponse(dateBotResponse);
+                    // When DateBot finishes talking...
+                    objectCallingFunction.voice.onend = function() {
+                        // Change DateBot back to smiling
+                        objectCallingFunction.dateBotView.playAnimation("smile");
+                        // Check if it is time to find a date
+                        if (objectCallingFunction.model.timeToFindADate) {
+                            // Find the user the perfect date!
+                            objectCallingFunction.findPerfectDate(objectCallingFunction, userObject);
+                        }
+                        else {
+                            // Have the user process DateBot's response
+                            userObject.processDateBotsResponse(responseJsonData[i], objectCallingFunction);
+                        }
+                        
+                    };
+
+                }
+                
             }
         }
     }
@@ -113,6 +123,27 @@ export default class DateBotController {
 
         // Get the perfect date from the model
         dateBotObject.model.getPerfectDate(dateBotObject, saySomethingWhileProcessingRequest, userObject);
+    }
+
+    /**
+     * Give the user dating advice
+     */
+    giveUserDatingAdvice(dateBotObject, userObject) {
+        console.log("Giving user dating advice");
+
+        // Create the intermediate function to play while DateBot is processing the user's request.
+        // TODO: Change this to something else so DateBot doesn't give advice twice. Maybe tell the user that 
+        // their request is being processed
+        function saySomethingWhileProcessingRequest(callback) {
+            // Grab a witty comment
+            //dateBotObject.model.comeUpWithSomethingWittyToSay(dateBotObject, callback, userObject);
+            // Have DateBot tell the user she has found some dates...
+            dateBotObject.dateBotView.saySomething(dateBotObject, userObject, "No problem! Here is some dating advice.", "talk()", callback);
+        }
+
+        // Grab the dating advice from the model
+        dateBotObject.model.getDatingAdvice(dateBotObject, saySomethingWhileProcessingRequest, userObject);
+
     }
 
     

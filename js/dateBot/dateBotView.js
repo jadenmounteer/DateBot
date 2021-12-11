@@ -120,6 +120,40 @@ class DateBotView {
     }
 
     /**
+     * Displays some dating advice to the user
+     */
+     displayDatingAdvice(dateBotObject, listOfDatingAdvice, indexOfAdviceToDisplay, userObject){
+
+        // Set the date to display 
+        let adviceToDisplay = listOfDatingAdvice[indexOfAdviceToDisplay];
+
+        // grab the animation to play
+        let dateBotAnimation = "talk()";
+        dateBotObject.voice.text = adviceToDisplay.comment; // Sets the words that DateBot will say.
+        window.speechSynthesis.speak(dateBotObject.voice); // Cause DateBot to speak
+        // Play the animation
+        dateBotObject.dateBotView.playAnimation(dateBotAnimation);
+        // Display dateBot's response to the user
+        dateBotObject.dateBotView.displayResponse(adviceToDisplay.comment);
+        // When DateBot finishes talking...
+        dateBotObject.voice.onend = function() {
+            // Change DateBot back to smiling
+            dateBotObject.dateBotView.playAnimation("smile");
+            // Have the user display the user options
+            userObject.userView.addNewResponseButtons(
+                "Let's find the perfect date", 
+                "Hello DateBot! How are you?", 
+                "What do you do?", 
+                "Can you give me some more dating advice?", 
+                "Can I view my list of favorite dates?", 
+                "Option not available"
+                );
+        };
+
+
+   }
+
+    /**
      * The generic method for making DateBot say something
      * @param {*} message 
      */

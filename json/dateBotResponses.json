@@ -80,10 +80,6 @@
       {"userResponse":"Hello DateBot! How are you?",
              "dateBotResponse":"I am doing, as you humans would say, fantabulous! How are you?",
               "animation":"talk()"},
-      
-      {"userResponse":"Can you give me some advice for dating?",
-      "dateBotResponse":"I am sorry. That feature is not available yet. Can I help you with something else?",
-            "animation":"talk()"},
 
       {"userResponse":"Can I view my list of favorite dates?",
             "dateBotResponse":"I am sorry. That feature is not available yet. Can I help you with something else?",
@@ -155,6 +151,17 @@
 
       {"userResponse":"I guess I am an animal",
             "dateBotResponse":"Admitting you have a problem is the first step to recovery. Anyways, shall we find you the perfect date activity?",
+                  "animation":"talk()"},
+      
+      {"userResponse":"Can you give me some advice for dating?",
+            "dateBotResponse":"User wants advice for dating",
+                  "animation":"talk()"},
+      
+      {"userResponse":"Can you give me some more dating advice?",
+            "dateBotResponse":"User wants advice for dating",
+                  "animation":"talk()"},
+      
+      {"userResponse":"Let's find the perfect date",
+            "dateBotResponse":"Alright! I'm excited to help you find the perfect date! First question: what is your budget?",
                   "animation":"talk()"}
-
 ]

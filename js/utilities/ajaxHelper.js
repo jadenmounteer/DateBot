@@ -30,4 +30,24 @@ function getNewJsonList(jsonFile) {
     xhttp.send();
 }
 
-export default {getNewJsonMessage, getNewJsonList}
+
+/**
+ * Fetch helper function for fetching a json response from a file or url
+ * @param {*} url 
+ * @returns a json response
+ */
+function fetchJSON(url) {
+    return fetch(url)
+      .then(function (response) {
+        if (!response.ok) {
+          throw Error(response.statusText); 
+        } else {
+          return response.json();
+        }
+      })
+      .catch(function (error) {
+        console.log(error);
+      });
+}
+
+export default {getNewJsonMessage, getNewJsonList, fetchJSON}
