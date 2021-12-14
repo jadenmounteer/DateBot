@@ -32,8 +32,10 @@ export default class DateBotController {
      * Initializes dataBot
      */
     initialize(userObject) {
+        console.log("Initializing DateBot");
         // Initialize DateBot's voice
         initializeVoice(this.voice, userObject, this.dateBotView);
+        console.log("Finished initializing voice");
     
     }
 
