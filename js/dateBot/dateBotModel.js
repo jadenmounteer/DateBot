@@ -314,7 +314,6 @@ export default class DateBotModel {
 
     // Deletes the list of favorite dates from local storage and clears the list of favorite dates
     deleteListOfFavoriteDatesFromLs(userObject, intermediateFunction) {
-
         intermediateFunction(() => {
             // Clear local storage
             localStorage.clear();

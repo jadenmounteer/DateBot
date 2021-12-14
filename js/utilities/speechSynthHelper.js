@@ -3,8 +3,9 @@
  * Takes a SpeechSynthesisUtterance() object as an argument
  */
 function initializeVoice(voiceObject, userObject, dateBotView) {
-    // Check if user is on mobile or if the browser does not allow us to change DateBot's voice... || typeof(window.speechSynthesis.onvoiceschanged)=="undefined"
-    if(/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)){
+    // Check if user is on mobile or if the browser does not allow us to change DateBot's voice... || typeof(window.speechSynthesis.onvoiceschanged)=="undefined" 
+    // TODO: This will not work on Firefox. I need to add someting in this if statement for it to skip if it is firefox.
+    if(/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent || typeof(window.speechSynthesis.onvoiceschanged)=="undefined")){
         // Since the platform the user is using does not let us pick a voice, we let the device pick the voice
         setVoiceMessage(voiceObject, "Hello I'm DateBot! I'm here to help you find the perfect activity for your date.", userObject);
         dateBotView.talk(4600);
