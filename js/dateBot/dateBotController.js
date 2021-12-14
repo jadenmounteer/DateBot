@@ -35,7 +35,8 @@ export default class DateBotController {
         console.log("Initializing DateBot");
         // Initialize DateBot's voice
         initializeVoice(this.voice, userObject, this.dateBotView);
-        console.log("Finished initializing voice");
+        // Have DateBot rememebr the user's list of favorite dates
+        this.model.rememberListOfFavoriteDates();
     
     }
 
@@ -73,7 +74,12 @@ export default class DateBotController {
                     // Advice for dating code will go here
                     objectCallingFunction.giveUserDatingAdvice(objectCallingFunction, userObject);
                 }
-                // If the user does not want advice for dating...
+                // If the user is deleting their list of favorite dates...
+                else if (dateBotResponse == "No problem. Your list of favorite dates are now being wiped from my memory.") {
+                    // Call the method to begin the process of deleting the list of favorite dates
+                    objectCallingFunction.deleteListOfFavoriteDates(objectCallingFunction, userObject);
+                }
+                // If the user does not want advice for dating or is not deleting any dates...
                 else {
                     objectCallingFunction.voice.text = dateBotResponse; // Sets the words that DateBot will say.
                     window.speechSynthesis.speak(objectCallingFunction.voice); // Cause DateBot to speak
@@ -134,8 +140,6 @@ export default class DateBotController {
         console.log("Giving user dating advice");
 
         // Create the intermediate function to play while DateBot is processing the user's request.
-        // TODO: Change this to something else so DateBot doesn't give advice twice. Maybe tell the user that 
-        // their request is being processed
         function saySomethingWhileProcessingRequest(callback) {
             // Grab a witty comment
             //dateBotObject.model.comeUpWithSomethingWittyToSay(dateBotObject, callback, userObject);
@@ -146,6 +150,27 @@ export default class DateBotController {
         // Grab the dating advice from the model
         dateBotObject.model.getDatingAdvice(dateBotObject, saySomethingWhileProcessingRequest, userObject);
 
+    }
+
+    /**
+     * Tells the user that the dates are being erased.
+     * @param {*} userObject 
+     */
+    deleteListOfFavoriteDates(dateBotObject, userObject) {
+        // Set a callback function to pass into the saySomething method
+       //const callback = dateBotObject.model.deleteListOfFavoriteDatesFromLs(userObject);
+
+        // Create the intermediate function to play while DateBot is processing the user's request.
+        function saySomethingWhileProcessingRequest(callback) {
+            // Tell the user that the memory is being wiped.
+            // After datebot is finished talking, 
+            dateBotObject.dateBotView.saySomething(dateBotObject, userObject, "No problem. Your list of favorite dates are now being wiped from my memory.", "talk()", callback);
+        }
+
+        // Delete the memory
+        dateBotObject.model.deleteListOfFavoriteDatesFromLs(userObject, saySomethingWhileProcessingRequest);
+
+        
     }
 
     

@@ -1,4 +1,5 @@
 import ajaxHelper from "../utilities/ajaxHelper.js";
+import {readFromLS, writeToLS} from "../utilities/localStorage.js";
 
 // This obect holds all of the user's preferences for their date
 const userPreferences = {
@@ -9,6 +10,8 @@ const userPreferences = {
 
 // A place to hold the dating advice
 let listOfDatingAdvice = "";
+// A place to hold all of the favorite dates
+let listOfFavoriteDates = new Array();
 
 
 export default class DateBotModel {
@@ -277,7 +280,49 @@ export default class DateBotModel {
 
     }
 
-    
+    /**
+     * Remembers a date that the user marked as favorite by adding it to the list. Adds the list to local storage.
+     * @param {*} dateBotObject 
+     * @param {*} userObject 
+     * @param {*} favoriteDate 
+     */
+    rememberFavoriteDate(dateBotObject, userObject, favoriteDate) {
+        console.log("Remembering favorite date");
+        // Add the favorite date to the list of favorite dates
+        console.log(`pushing date: ${favoriteDate.activity}`);
+        listOfFavoriteDates.push(favoriteDate);
+        console.log(`There are now ${listOfFavoriteDates.length} dates in the list`);
+        // Add the list of favorite dates to localStorage so DateBot remembers next time
+        // The key to accessing the data is list-of-favorite-dates
+        writeToLS("list-of-favorite-dates", listOfFavoriteDates);
+    }
 
+    /**
+     * DateBot remembers the user's list of favorite dates and pulls them from local storage
+     */
+    rememberListOfFavoriteDates() {
+
+        if (readFromLS("list-of-favorite-dates") != null) {
+            listOfFavoriteDates = readFromLS("list-of-favorite-dates");
+        }
+        
+        if (listOfFavoriteDates) {
+            console.log(`Looks like the user had ${listOfFavoriteDates.length} dates saved as favorite`);
+        }
+        
+    }
+
+    // Deletes the list of favorite dates from local storage and clears the list of favorite dates
+    deleteListOfFavoriteDatesFromLs(userObject, intermediateFunction) {
+
+        intermediateFunction(() => {
+            // Clear local storage
+            localStorage.clear();
+            // Make the list of favorite dates start from scratch
+            listOfFavoriteDates = new Array();
+            // Update the view with the user options
+            userObject.userView.addNewResponseButtons("Let's get started", "What do you do?", "Can you give me some advice for dating?", "Can I view my list of favorite dates?");
+        }); 
+    }
 
 }

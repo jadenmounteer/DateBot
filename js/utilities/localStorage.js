@@ -24,12 +24,14 @@ function readSingleStringFromLS(key) {
 
 /**
  * write an array of objects to local storage under the provided key
+ * Serializes the data
  * @param  {string} key The key under which the value is stored under in LS
-* @param {array} data The information to be stored as an array of objects. Must be serialized.
+* @param {array} data The information to be stored as an array of objects. 
 * @function writeToLS(key, data) { }
  */
 function writeToLS(key, data) {
-    localStorage.setItem(key, data);
+    const serializedData = JSON.stringify(data)
+    localStorage.setItem(key, serializedData);
 }
 
 // This method clears all local storage. Use it wisely.

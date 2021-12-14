@@ -33,9 +33,7 @@ Style the response buttons
   display: none;
   max-width: 200px;
   min-width: 200px;
-  /*
-  Center the buttons 
-  */
+  min-height: 100px;
   margin-bottom: 10px;
   cursor: pointer;
   transition: .5s; }
@@ -60,6 +58,9 @@ Style the response buttons
 
 #on-button {
   display: block; }
+
+.response-button:disabled {
+  background-color: #8CB8B1; }
 
 /* Style the speech bubble */
 #speech-bubble {

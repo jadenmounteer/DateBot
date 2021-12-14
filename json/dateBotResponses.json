@@ -163,5 +163,21 @@
       
       {"userResponse":"Let's find the perfect date",
             "dateBotResponse":"Alright! I'm excited to help you find the perfect date! First question: what is your budget?",
+                  "animation":"talk()"},
+      
+      {"userResponse":"Delete my favorite dates",
+            "dateBotResponse":"Are you sure you want to delete your favorite dates? They will be erased from my memory, but you can always add more later if you like.",
+                  "animation":"talk()"},
+
+      {"userResponse":"On second thought, let's keep them for now.",
+            "dateBotResponse":"Sounds good to me. What else can I help you with today?",
+                  "animation":"talk()"},
+      
+      {"userResponse":"Yes let's delete them",
+            "dateBotResponse":"No problem. Your list of favorite dates are now being wiped from my memory.",
                   "animation":"talk()"}
+
+                  
+
+                  
 ]

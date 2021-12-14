@@ -3,9 +3,6 @@
  * Takes a SpeechSynthesisUtterance() object as an argument
  */
 function initializeVoice(voiceObject, userObject, dateBotView) {
-    console.log("Inside speech synth function");
-    console.log(`Supports onvoiceschanged: ${typeof(window.speechSynthesis.onvoiceschanged)!="undefined"}`);
-    console.log(`Is Chrome: ${window.chrome};`)
     // Check if user is on mobile or if the browser does not allow us to change DateBot's voice... || typeof(window.speechSynthesis.onvoiceschanged)=="undefined"
     if(/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)){
         // Since the platform the user is using does not let us pick a voice, we let the device pick the voice
@@ -16,14 +13,11 @@ function initializeVoice(voiceObject, userObject, dateBotView) {
     else {
         // Configure DateBot's speech properties
         let voices = [];
-        console.log("Created empty array for voices");
 
         // If we are not on Chrome...
         if (!window.chrome) {
-            console.log("Getting list of voices");
             // Get List of Voices
             voices = window.speechSynthesis.getVoices();
-            console.log("obtained list of voices");
 
             for (let i=0; i<voices.length; i++) {
                 console.log(voices[i].name);
@@ -42,7 +36,6 @@ function initializeVoice(voiceObject, userObject, dateBotView) {
         }
         else {
             window.speechSynthesis.onvoiceschanged = () => {
-                console.log("Getting list of voices");
                 // Get List of Voices
                 voices = window.speechSynthesis.getVoices();
     

@@ -174,6 +174,7 @@ class DateBotView {
                 // Call the callback with the following arguments...
                 callBack(dateBotObject, additionalCallbackParameter, 0, userObject);
             }
+            
             // If not...
             else {
                 // Simply call the callback function

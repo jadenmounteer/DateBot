@@ -68,6 +68,7 @@ class UserView {
         document.getElementById('user-responses-div').innerHTML = `
         <button class="response-button" id="response-button-1">Next Idea</button>
         <button class="response-button" id="response-button-2">${internetSearchButtonLabel}</button>
+        <button class="response-button" id="response-button-3">Save to favorite dates</button>
         `
         // Grab the nextButton
         let nextButton = document.getElementById('response-button-1');
@@ -81,6 +82,7 @@ class UserView {
             // Make the buttons invisible
             document.getElementById('response-button-1').style.display = 'none';
             document.getElementById('response-button-2').style.display = 'none';
+            document.getElementById('response-button-3').style.display = 'none';
         });
 
         // Grab the internet search button
@@ -89,6 +91,20 @@ class UserView {
         internetSearchButton.style.display = 'inline';
         // Add the event listener to make it do its thing
         setInternetSearchListener(internetSearchButton, internetSearchQuery);
+
+        // Grab the Save to favorite dates button
+        let favoriteDatesButton = document.getElementById('response-button-3');
+        // Make it visible
+        favoriteDatesButton.style.display = 'inline';
+        // Add the event listener to make it do its thing
+        favoriteDatesButton.addEventListener("click", () => {
+            console.log("Saving date to list of favorites");
+            favoriteDatesButton.innerHTML = "Date saved as favorite";
+            // Disable the button
+            favoriteDatesButton.disabled = true;
+            // Have DateBot remember the date
+            dateBotObject.model.rememberFavoriteDate(dateBotObject, userObject, listOfPerfectDates[indexOfNextDate - 1]);
+        });
     }
 
 
