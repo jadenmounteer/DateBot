@@ -320,8 +320,37 @@ export default class DateBotModel {
             // Make the list of favorite dates start from scratch
             listOfFavoriteDates = new Array();
             // Update the view with the user options
-            userObject.userView.addNewResponseButtons("Let's get started", "What do you do?", "Can you give me some advice for dating?", "Can I view my list of favorite dates?");
+            userObject.userView.addNewResponseButtons("Let's get started", "Hello DateBot! How are you?", "What do you do?", "Can you give me some advice for dating?", "Can I view my list of favorite dates?");
         }); 
+    }
+
+    /**
+     * Grabs the list of favorite dates. If there are no dates, DateBot tells the user and brings them back to the main menu.
+     * If there are dates, she displays them to the user.
+     * @param {*} userObject 
+     * @param {*} intermediateFunction 
+     */
+     grabFavoriteDates(userObject, dateBotObject, intermediateFunction) {
+
+         // If there are dates in the list of favorite dates...
+         if (listOfFavoriteDates.length > 0) {
+            console.log(`Looks like the user had ${listOfFavoriteDates.length} dates saved as favorite`);
+            intermediateFunction(() => {
+                // Update the view
+                userObject.userView.renderFavoriteDates(userObject, dateBotObject, listOfFavoriteDates);
+                //userObject.userView.addNewResponseButtons("Let's get started", "What do you do?", "Can you give me some advice for dating?", "Can I view my list of favorite dates?");
+            }); 
+        }
+        // If there are no dates in the list of dates...
+        else{
+            console.log("User has no favorite dates");
+            intermediateFunction(() => {
+                // Update the view with the user options
+                userObject.userView.addNewResponseButtons("Let's get started", "Hello DateBot! How are you?", "What do you do?", "Can you give me some advice for dating?", "Can I view my list of favorite dates?");
+               
+            }); 
+        }
+        
     }
 
 }

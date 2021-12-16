@@ -7,6 +7,7 @@ import DateBotModel from "./dateBotModel.js";
 import DateBotView from "./dateBotView.js";
 import getNewJsonMessage from "../utilities/ajaxHelper.js";
 import  {initializeVoice, setVoiceMessage} from '../utilities/speechSynthHelper.js';
+import {readFromLS} from "../utilities/localStorage.js";
 
 
 
@@ -78,6 +79,11 @@ export default class DateBotController {
                 else if (dateBotResponse == "No problem. Your list of favorite dates are now being wiped from my memory.") {
                     // Call the method to begin the process of deleting the list of favorite dates
                     objectCallingFunction.deleteListOfFavoriteDates(objectCallingFunction, userObject);
+                }
+                // If the user wants to view their list of favorite dates...
+                else if (dateBotResponse == "User wants to view list of favorite dates") {
+                    // Begin the process of showing the user their list of perfect dates...
+                    objectCallingFunction.showFavoriteDates(objectCallingFunction, userObject);
                 }
                 // If the user does not want advice for dating or is not deleting any dates...
                 else {
@@ -171,6 +177,34 @@ export default class DateBotController {
         dateBotObject.model.deleteListOfFavoriteDatesFromLs(userObject, saySomethingWhileProcessingRequest);
 
         
+    }
+
+    /**
+     * Begin the process of showing the user their list of perfect dates
+     * @param {*} dateBotObject 
+     * @param {*} userObject 
+     */
+    showFavoriteDates(dateBotObject, userObject) {
+
+        // Create the intermediate function to play while DateBot is processing the user's request.
+        function saySomethingWhileProcessingRequest(callback) {
+            // If there are dates in the list of favorite dates...
+            if (readFromLS("list-of-favorite-dates") != null) {
+                // Tell the user she is presenting the list of favorite dates
+                // After datebot is finished talking, 
+                dateBotObject.dateBotView.saySomething(dateBotObject, userObject, "No problem. Here is your list of favorite dates.", "talk()", callback);
+            }
+            // If there are no dates in the list of favorite dates...
+            else {
+                // Tell the user that there are no dates...
+                dateBotObject.dateBotView.saySomething(dateBotObject, userObject, "I am sorry. You appear to have no favorite dates. Click Let's Get Started to begin adding favorite dates.", "talk()", callback);
+            }
+            
+        }
+
+        // Grab the dates to show
+        dateBotObject.model.grabFavoriteDates(userObject, dateBotObject,saySomethingWhileProcessingRequest);
+
     }
 
     

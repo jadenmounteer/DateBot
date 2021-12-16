@@ -142,6 +142,51 @@ main {
     main {
       margin-top: 50px; } }
 
+.favorite-dates-div {
+  width: 100%; }
+
+#favorite-dates-table {
+  color: white;
+  font-weight: 900;
+  font-family: arial;
+  width: 100%;
+  margin: 0 auto;
+  font-size: .8em;
+  margin-top: 50px; }
+
+#favorite-dates-table th {
+  font-size: 1.2em;
+  padding: 10px;
+  color: #1C5D0B;
+  text-decoration: underline; }
+
+.action-cell:hover {
+  background-color: #BB535F;
+  cursor: pointer; }
+
+/*
+tr:nth-child(even) {
+    background-color: #C38257;
+}
+
+tr:nth-child(odd) {
+    background-color: $table-background-color;
+}
+*/
+td {
+  border-radius: 3px 3px 3px 3px;
+  padding: 10px;
+  color: #1C5D0B; }
+
+.action-cell {
+  background-color: #5CA449;
+  color: white; }
+
+@media only screen and (min-width: 500px) {
+  #favorite-dates-table {
+    width: 60%;
+    border-spacing: 5px;
+    font-size: 1.1em; } }
 /* Reset the margin and padding of everything so we can get rid of the white border that the browser gives us by default*/
 * {
   margin: 0;

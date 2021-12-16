@@ -82,7 +82,7 @@
               "animation":"talk()"},
 
       {"userResponse":"Can I view my list of favorite dates?",
-            "dateBotResponse":"I am sorry. That feature is not available yet. Can I help you with something else?",
+            "dateBotResponse":"User wants to view list of favorite dates",
                   "animation":"talk()"},
 
       {"userResponse":"Option not available",

@@ -1,0 +1,62 @@
+// Todo: Space out the tables correctly, cause the text to wrap, make it responsive, and style every other row with a different color.
+.favorite-dates-div{
+    width: 100%;
+}
+
+#favorite-dates-table {
+    color: white;
+    font-weight: 900;
+    font-family: arial;
+    
+    //box-shadow: 1px 1px 4px 1px #888;
+    //border-radius: 3px 3px 3px 3px;
+    width: 100%;
+    margin: 0 auto; 
+    font-size: .8em;
+    margin-top: 50px;
+}
+
+#favorite-dates-table th {
+    font-size: 1.2em;
+    //background-color: #1C5D0B;
+    //border-radius: 3px 3px 3px 3px;
+    padding: 10px;
+    color: #1C5D0B;
+    text-decoration: underline;
+}
+
+.action-cell:hover {
+    background-color: $cell-color-on-hover;
+    cursor: pointer;
+}
+/*
+tr:nth-child(even) {
+    background-color: #C38257;
+}
+
+tr:nth-child(odd) {
+    background-color: $table-background-color;
+}
+*/
+td {
+    //box-shadow: 1px 1px 4px 1px #888;
+    border-radius: 3px 3px 3px 3px;
+    padding: 10px;
+    //background-color: #C38257;
+    color: #1C5D0B;
+}
+
+.action-cell {
+    background-color: #5CA449;
+    color: white;
+}
+
+@media only screen and (min-width: 500px) {
+    #favorite-dates-table {
+        width: 60%;
+        border-spacing: 5px;
+        font-size: 1.1em;
+    }
+}
+
+

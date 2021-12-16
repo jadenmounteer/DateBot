@@ -30,6 +30,10 @@ $header-color: #B5E1AA;
 $header-font: 'Press Start 2P', cursive;
 //$speech-bubble-color: #FFDAC1;
 $speech-bubble-color: #5CA449;
+// Table colors
+$table-background-color: $speech-bubble-color;
+$table-border-color: $body-second-color;
+$cell-color-on-hover: #BB535F;
 
 // Breakpoints
 $break-large: 1700px;
@@ -45,6 +49,7 @@ $break-small: 510px;
 @import "blocks/user-response-div";
 @import "blocks/body";
 @import "blocks/main";
+@import "blocks/favorite-dates";
 
 /* Reset the margin and padding of everything so we can get rid of the white border that the browser gives us by default*/
 * {

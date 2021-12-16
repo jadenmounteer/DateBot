@@ -129,10 +129,11 @@
     
     {"dateBotResponse":"Sounds good to me. What else can I help you with today?",
         "response1":"Let's get started", 
-        "response2":"What do you do?", 
-        "response3":"Can you give me some advice for dating?", 
-        "response4":"Can I view my list of favorite dates?",
-        "response5":"Delete my favorite dates"}
+        "response2": "Hello DateBot! How are you?",
+        "response3":"What do you do?", 
+        "response4":"Can you give me some advice for dating?", 
+        "response5":"Can I view my list of favorite dates?",
+        "response6":"Delete my favorite dates"}
 
         
 ]
