@@ -1,7 +1,8 @@
 # DateBot
 An artificial intelligence robot here to help you find the perfect date
 
-So far, Google Chrome is the only compatible browser. Multiple browser support is currently in progress.
+COMPATIBILITY: The app is compatible with any browser on desktop and on mobile. Unfortunately, however, the app does not work on iPhone as it uses expiremental technology
+that is blocked by the mobile device. Compatibility with iPhone is in progress.
 
 You can access the app here: https://jadenmounteer.github.io/DateBot/
 
